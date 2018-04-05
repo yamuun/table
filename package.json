@@ -28,8 +28,15 @@
     "@babel/preset-react": "7.0.0-beta.40",
     "@babel/preset-stage-3": "7.0.0-beta.40",
     "@babel/runtime": "7.0.0-beta.40",
+    "@storybook/addon-actions": "^4.0.0-alpha.1",
+    "@storybook/addon-links": "^4.0.0-alpha.1",
+    "@storybook/addon-viewport": "4.0.0-alpha.1",
+    "@storybook/addons": "^4.0.0-alpha.1",
+    "@storybook/react": "^4.0.0-alpha.1",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "8.2.1",
     "babel-jest": "23.0.0-alpha.4",
+    "babel-runtime": "7.0.0-bridge.0",
     "eslint": "5.0.0-alpha.0",
     "eslint-config-fbjs": "2.0.1",
     "eslint-config-prettier": "2.9.0",
@@ -60,9 +67,10 @@
     "stylelint-config-idiomatic-order": "5.0.0"
   },
   "scripts": {
-    "build:es": "node rollup.es.build.js",
     "build:umd": "node rollup.umd.build.js",
-    "prepublish": "make prepublish"
+    "prepublish": "make prepublish",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "react": "16.3.1",
