@@ -22,4 +22,4 @@ prepublish:
 
 	cp ./flow-typed/index.js.flow ./lib/index.js.flow
 
-	cp -r ./styles/ ./lib/styles/
+	cp -r ./src/styles/ ./lib/styles/
