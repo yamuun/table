@@ -40,6 +40,7 @@ async function build() {
           main: true,
           browser: true,
           extensions: ['.js', '.json', '.jsx'],
+          preferBuiltins: false,
           customResolveOptions: {
             moduleDirectory: resolvePath('node_modules'),
           },
@@ -124,7 +125,6 @@ async function build() {
       ],
     });
 
-    // writting
     bundle.write({
       format: 'umd',
       file: resolvePath('lib/index.umd.js'),
