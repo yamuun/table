@@ -15,3 +15,5 @@ prepublish:
 	cp ./flow-typed/index.js.flow ./lib/index.js.flow
 
 	cp -r ./src/styles/ ./lib/styles/
+
+	mv ./base.css ./lib/base.css

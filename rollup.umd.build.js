@@ -10,6 +10,7 @@ const replace = require('rollup-plugin-replace');
 // const stripBanner = require('rollup-plugin-strip-banner');
 const json = require('rollup-plugin-json');
 const url = require('rollup-plugin-url');
+const scss = require('rollup-plugin-scss');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const resolve = require('rollup-plugin-node-resolve');
 
@@ -48,6 +49,21 @@ async function build() {
         peerDepsExternal(),
         json(),
         url(),
+        scss({
+          // Callback that will be called ongenerate with two arguments:
+          // - styles: the contents of all style tags combined:
+          // 'body { color: green }'
+          // - styleNodes: an array of style objects:
+          // { filename: 'body { ... }' }
+          output: function(styles, styleNodes) {
+            fs.writeFileSync(resolvePath('base.css'), styles, {
+              encoding: 'utf-8',
+            });
+          },
+          // Determine if node process
+          // should be terminated on error (default: false)
+          failOnError: true,
+        }),
         commonjs({
           include: 'node_modules/**',
           namedExports: {
