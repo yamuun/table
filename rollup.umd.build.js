@@ -112,6 +112,10 @@ async function build() {
       file: resolvePath('lib/index.umd.js'),
       name: 'Table',
       exports: 'named',
+      globals: {
+        react: 'React',
+        'react-dom': 'ReactDOM',
+      },
     });
   } catch (error) {
     console.error(error);

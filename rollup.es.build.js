@@ -110,6 +110,10 @@ async function build() {
       format: 'es',
       file: resolvePath('lib/index.es.js'),
       name: 'Table',
+      globals: {
+        react: 'React',
+        'react-dom': 'ReactDOM',
+      },
     });
   } catch (error) {
     console.error(error);
