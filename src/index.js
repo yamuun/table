@@ -1,13 +1,7 @@
 /* @flow */
 import Table from './Table';
-import Loading from './Loading';
-import NoData from './NoData';
 
-export default {
-  Table: Table,
-  Loading: Loading,
-  NoData: NoData,
-};
+export default Table;
 
 export {default as Table} from './Table';
 

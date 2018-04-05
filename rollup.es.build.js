@@ -31,7 +31,7 @@ async function build() {
   try {
     const bundle = await rollup({
       input: resolvePath('src/index.js'),
-      external: ['lodash', 'react'],
+      external: ['lodash', 'react', 'react-dom'],
       plugins: [
         resolve({
           extensions: ['.js', '.json', '.jsx'],
