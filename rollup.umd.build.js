@@ -47,6 +47,19 @@ async function build() {
         peerDepsExternal(),
         json(),
         url(),
+        commonjs({
+          include: 'node_modules/**',
+          namedExports: {
+            'node_modules/react/index.js': [
+              'Component',
+              'PureComponent',
+              'Fragment',
+              'Children',
+              'createElement',
+            ],
+            'node_modules/react-dom/index.js': ['render'],
+          },
+        }),
         babel({
           exclude: 'node_modules/**',
           babelrc: false,
@@ -89,19 +102,6 @@ async function build() {
           'process.env.NODE_ENV': isProduction
             ? "'production'"
             : "'development'",
-        }),
-        commonjs({
-          include: 'node_modules/**',
-          namedExports: {
-            'node_modules/react/index.js': [
-              'Component',
-              'PureComponent',
-              'Fragment',
-              'Children',
-              'createElement',
-            ],
-            'node_modules/react-dom/index.js': ['render'],
-          },
         }),
         // TODO: optimizing JavaScript with google-closure-compiler-js
         // isProduction &&
