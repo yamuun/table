@@ -5,6 +5,7 @@
   "exclude": ["node_modules"],
   "path-intellisense.mappings": {
     "/": "${workspaceRoot}",
-    "src": "${workspaceRoot}/src"
+    "src": "${workspaceRoot}/src",
+    "stories": "${workspaceRoot}/stories"
   }
 }
