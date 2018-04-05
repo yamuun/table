@@ -34,6 +34,7 @@ async function build() {
       external: ['lodash', 'react', 'react-dom'],
       plugins: [
         resolve({
+          extensions: ['.js', '.json', 'jsx'],
           customResolveOptions: {
             moduleDirectory: resolvePath('node_modules'),
           },
@@ -43,6 +44,8 @@ async function build() {
           babelrc: false,
           presets: [
             '@babel/flow',
+            '@babel/react',
+            '@babel/preset-stage-3',
             [
               '@babel/preset-env',
               {
@@ -107,7 +110,7 @@ async function build() {
       sourceMap: false,
       format: 'umd',
       file: resolvePath('lib/index.umd.js'),
-      name: 'ValidateRegexp',
+      name: 'Table',
       exports: 'named',
     });
   } catch (error) {
