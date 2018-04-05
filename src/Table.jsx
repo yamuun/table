@@ -1,5 +1,5 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
 import ReactTable from 'react-table';
 import NoData from './NoData';
 import Loading from './Loading';
