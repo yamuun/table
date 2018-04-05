@@ -1,12 +1,18 @@
 /* @flow */
-// import hasStringsLowerAndUpper from './hasStringsLowerAndUpper';
-// import shouldBeEmail from './shouldBeEmail';
+import Table from './Table';
+import Loading from './Loading';
+import NoData from './NoData';
 
-// export default {
-//   hasStringsLowerAndUpper: hasStringsLowerAndUpper,
-//   shouldBeEmail: shouldBeEmail,
-// };
+export default {
+  Table: Table,
+  Loading: Loading,
+  NoData: NoData,
+};
 
-// export {default as hasStringsLowerAndUpper} from './hasStringsLowerAndUpper';
+export {default as Table} from './Table';
 
-// export {default as shouldBeEmail} from './shouldBeEmail';
+export {default as Loading} from './Loading';
+
+export {default as NoData} from './NoData';
+
+export {default as pagination} from './pagination';

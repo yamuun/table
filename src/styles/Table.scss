@@ -1,0 +1,27 @@
+.gc__table {
+  .gc__nodata {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #404b69;
+    font-size: 12px;
+    background: {
+      color: rgba(white, 0.2);
+    }
+  }
+
+  .gc__loading {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: {
+      color: rgba(white, 0.2);
+    }
+  }
+}
