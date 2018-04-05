@@ -7,7 +7,7 @@ type Props = {};
 export default function Loading(props: Props) {
   return (
     <div className="gc__loading">
-      <Loader active inline="centered" size="mini" />
+      <Loader active inline="centered" size="small" />
     </div>
   );
 }

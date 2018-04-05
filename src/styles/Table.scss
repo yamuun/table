@@ -6,10 +6,10 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-    color: #404b69;
+    color: $table-nodata-text-color;
     font-size: 12px;
     background: {
-      color: rgba(white, 0.2);
+      color: rgba(white, 0.3);
     }
   }
 
@@ -21,7 +21,38 @@
     align-items: center;
     justify-content: center;
     background: {
-      color: rgba(white, 0.2);
+      color: rgba(white, 0.3);
+    }
+  }
+
+  .noclick {
+    opacity: 0.85;
+    pointer-events: none;
+  }
+
+  .b__sort {
+    .icon {
+      margin: 0;
+
+      &.triangle.up {
+        position: absolute;
+        bottom: 30px;
+        color: $table-sort-default-color !important;
+
+        &.sortKey.asc {
+          color: $table-main-color !important;
+        }
+      }
+
+      &.triangle.down {
+        position: absolute;
+        bottom: 25px;
+        color: $table-sort-default-color !important;
+
+        &.sortKey.desc {
+          color: $table-main-color !important;
+        }
+      }
     }
   }
 }

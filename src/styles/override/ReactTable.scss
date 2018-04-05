@@ -1,7 +1,10 @@
 .ReactTable {
   background: {
-    color: white;
+    color: $table-bg-color;
   }
+
+  border: none;
+  border-radius: 3px;
 
   div {
     outline: none;
@@ -11,15 +14,79 @@
     z-index: 0;
   }
 
-  .rt-thead .rt-th {
-    &.-sort-asc,
-    & .rt-td.-sort-asc {
-      box-shadow: inset 0 3px 0 0 rgba(#d4378a, 0.6);
+  .rt-thead {
+    .rt-th {
+      box-shadow: none;
+      text-align: left;
+
+      .sort-asc {
+        width: 0;
+        height: 0;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid black;
+        border-left: 5px solid transparent;
+      }
     }
 
-    &.-sort-desc,
-    & .rt-td.-sort-desc {
-      box-shadow: inset 0 -3px 0 0 rgba(#d4378a, 0.6);
+    &.-header {
+      height: 70px;
+      box-shadow: none;
+    }
+  }
+
+  .rt-tr {
+    height: 70px;
+    border-bottom: 3px solid $table-thead-border-color;
+
+    .rt-th {
+      padding-top: 25px;
+      border: none;
+      margin-left: 5px;
+      color: $table-th-text-color;
+      font-weight: bold;
+    }
+  }
+
+  .rt-tbody {
+    overflow: hidden;
+
+    .rt-tr-group {
+      height: 40px;
+
+      .rt-tr {
+        height: 40px;
+        border: none;
+
+        &.-odd {
+          .rt-td {
+            border-right: none;
+            color: $table-td-text-color;
+
+            a {
+              color: $table-main-color;
+            }
+          }
+
+          &:hover {
+            background-color: rgba($table-main-color, 0.07);
+          }
+        }
+
+        &.-even {
+          .rt-td {
+            border-right: none;
+            color: $table-td-text-color;
+
+            a {
+              color: $table-main-color;
+            }
+          }
+
+          &:hover {
+            background-color: rgba($table-main-color, 0.07);
+          }
+        }
+      }
     }
   }
 }
