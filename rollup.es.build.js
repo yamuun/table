@@ -36,6 +36,7 @@ async function build() {
       external: ['lodash', 'react', 'react-dom'],
       plugins: [
         resolve({
+          module: true,
           jsnext: true,
           extensions: ['.js', '.json', '.jsx'],
           customResolveOptions: {
