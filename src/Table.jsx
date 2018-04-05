@@ -10,31 +10,21 @@ type Props = {
   loading: boolean,
 };
 
-export default function Table(props: Props) {
-  const {data, columns, loading} = props;
-
-  return (
-    <div className="gc__table">
-      <ReactTable
-        data={data}
-        columns={columns}
-        defaultPageSize={10}
-        showPaginationBottom={false}
-        className="-striped -highlight"
-        loading={loading}
-        NoDataComponent={() => {
-          if (loading) {
-            return null;
-          }
-          return <NoData />;
-        }}
-        LoadingComponent={() => {
-          if (loading) {
-            return <Loading />;
-          }
-          return null;
-        }}
-      />
-    </div>
-  );
+export default class Table extends React.Component<Props, *> {
+  render() {
+    return (
+      <div className="gc__table">
+        <ReactTable
+          data={this.props.data}
+          columns={this.props.columns}
+          defaultPageSize={10}
+          showPaginationBottom={false}
+          className="-striped -highlight"
+          loading={this.props.loading}
+          NoDataComponent={this.props.loading ? null : <NoData />}
+          LoadingComponent={this.props.loading ? <Loading /> : null}
+        />
+      </div>
+    );
+  }
 }
