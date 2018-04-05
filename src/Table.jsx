@@ -14,8 +14,8 @@ export default function Table(props: Props) {
   return (
     <div className="gc__table">
       <ReactTable
-        data={props.data && props.data}
-        columns={props.columns && props.columns}
+        data={props.data || []}
+        columns={props.columns || []}
         defaultPageSize={10}
         showPaginationBottom={false}
         className="-striped -highlight"
