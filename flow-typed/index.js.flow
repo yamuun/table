@@ -2,7 +2,3 @@
 // declare module 'hasStringsLowerAndUpper' {
 //   declare function hasStringsLowerAndUpper(value: string): boolean;
 // }
-
-// declare module 'shouldBeEmail' {
-//   declare function shouldBeEmail(value: string): boolean;
-// }

@@ -6,8 +6,8 @@ import Loading from './Loading';
 import Column from './Column';
 
 type Props = {
-  data: [],
-  columns: [],
+  data: [] | Array<*>,
+  columns: [] | Array<*>,
   loading: boolean,
   sortState: {},
   updateSort: () => void,
@@ -15,7 +15,14 @@ type Props = {
 };
 
 export default function Table(props: Props) {
-  const {data, columns, loading, sortState, updateSort, noDataMessage} = props;
+  const {
+    data = [],
+    columns = [],
+    loading,
+    sortState,
+    updateSort,
+    noDataMessage,
+  } = props;
 
   return (
     <div className="gc__table">
