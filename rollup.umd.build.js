@@ -36,6 +36,9 @@ async function build() {
       external: ['lodash', 'react', 'react-dom'],
       plugins: [
         resolve({
+          module: true,
+          main: true,
+          browser: true,
           extensions: ['.js', '.json', '.jsx'],
           customResolveOptions: {
             moduleDirectory: resolvePath('node_modules'),
@@ -87,7 +90,19 @@ async function build() {
             ? "'production'"
             : "'development'",
         }),
-        commonjs(),
+        commonjs({
+          include: 'node_modules/**',
+          namedExports: {
+            'node_modules/react/index.js': [
+              'Component',
+              'PureComponent',
+              'Fragment',
+              'Children',
+              'createElement',
+            ],
+            'node_modules/react-dom/index.js': ['render'],
+          },
+        }),
         // TODO: optimizing JavaScript with google-closure-compiler-js
         // isProduction &&
         //   closure({
@@ -117,6 +132,7 @@ async function build() {
       exports: 'named',
       globals: {
         react: 'React',
+        'react-dom': 'ReactDOM',
       },
     });
   } catch (error) {
