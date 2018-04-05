@@ -46,7 +46,7 @@ async function build() {
             [
               '@babel/preset-env',
               {
-                targets: {node: '8.11.1'},
+                targets: {browsers: ['> 1% in JP']},
                 modules: false,
               },
             ],
@@ -65,6 +65,11 @@ async function build() {
             '@babel/plugin-proposal-decorators',
             '@babel/plugin-proposal-export-default-from',
             '@babel/plugin-proposal-export-namespace-from',
+            '@babel/plugin-syntax-class-properties',
+            '@babel/plugin-syntax-decorators',
+            '@babel/plugin-syntax-export-default-from',
+            '@babel/plugin-syntax-export-namespace-from',
+            '@babel/plugin-syntax-optional-chaining',
           ],
           runtimeHelpers: true,
         }),
