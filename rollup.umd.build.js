@@ -9,6 +9,8 @@ const prettier = require('rollup-plugin-prettier');
 const replace = require('rollup-plugin-replace');
 // const stripBanner = require('rollup-plugin-strip-banner');
 const json = require('rollup-plugin-json');
+const url = require('rollup-plugin-url');
+const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const resolve = require('rollup-plugin-node-resolve');
 
 // const closureOptions = {
@@ -41,6 +43,9 @@ async function build() {
             moduleDirectory: resolvePath('node_modules'),
           },
         }),
+        peerDepsExternal(),
+        json(),
+        url(),
         babel({
           exclude: 'node_modules/**',
           babelrc: false,
@@ -85,7 +90,6 @@ async function build() {
             : "'development'",
         }),
         commonjs(),
-        json(),
         // TODO: optimizing JavaScript with google-closure-compiler-js
         // isProduction &&
         //   closure({
