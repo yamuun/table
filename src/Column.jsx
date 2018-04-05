@@ -1,4 +1,4 @@
-// @flow
+/* @flow */
 import React from 'react';
 import {Icon} from 'semantic-ui-react';
 import classNames from 'classnames';
