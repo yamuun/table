@@ -1,10 +1,6 @@
 /* @flow */
 import React from 'react';
 
-type Props = {
-  noDataMessage: string,
-};
-
-export default function NoData(props: Props) {
+export default function NoData(props: NoDataProps) {
   return <div className="gc__nodata">{props.noDataMessage}</div>;
 }

@@ -7,16 +7,7 @@ import Column from './Column';
 
 import 'react-table/react-table.css';
 
-type Props = {
-  data: [] | Array<*>,
-  columns: [] | Array<*>,
-  loading: boolean,
-  sortState: {},
-  updateSort: () => void,
-  noDataMessage: string,
-};
-
-export default function Table(props: Props) {
+export default function Table(props: TableProps) {
   const {
     data = [],
     columns = [],

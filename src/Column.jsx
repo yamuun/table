@@ -3,27 +3,7 @@ import React from 'react';
 import {Icon} from 'semantic-ui-react';
 import classNames from 'classnames';
 
-type Props = {
-  style: {},
-  className: string,
-  children: [
-    {
-      props: {
-        style: {},
-        children: string,
-      },
-    },
-    any,
-  ],
-  sortState: {
-    key: string,
-    order: string,
-  },
-  updateSort: ({}) => void,
-  columns: [],
-};
-
-export default function Column(props: Props) {
+export default function Column(props: ColumnProps) {
   const {style, className, children, sortState, updateSort, columns} = props;
   const sortable = className.indexOf('-cursor-pointer') !== -1;
 
