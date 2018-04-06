@@ -3,6 +3,7 @@ import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
+import {withInfo} from '@storybook/addon-info';
 
 import {Button, Welcome} from '@storybook/react/demo';
 
@@ -31,6 +32,7 @@ storiesOf('Button', module)
   ));
 
 storiesOf('Table', module)
+  .addDecorator((story, context) => withInfo('common info')(story)(context))
   .add('no data', () => <Table />)
   .add('fruites', () => (
     <Table data={tableData} columns={TableColumns(tableProps)} />
