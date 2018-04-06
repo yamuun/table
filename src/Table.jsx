@@ -5,6 +5,8 @@ import NoData from './NoData';
 import Loading from './Loading';
 import Column from './Column';
 
+import 'react-table/react-table.css';
+
 type Props = {
   data: [] | Array<*>,
   columns: [] | Array<*>,

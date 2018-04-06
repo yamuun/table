@@ -60,6 +60,14 @@ module.exports = (baseConfig, env) => {
     ],
   });
 
+  config.module.rules.push({
+    test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+    loader: require.resolve('url-loader'),
+    options: {
+      limit: 10000,
+    },
+  });
+
   // Return the altered config
   return config;
 };
