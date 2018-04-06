@@ -1,3 +1,6 @@
+start:
+	yarn run storybook
+
 clean:
 	rm -rf ./lib/
 
