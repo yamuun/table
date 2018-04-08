@@ -36,6 +36,7 @@ module.exports = {
       ERROR,
       {
         code: 80,
+        ignoreComments: true,
         ignoreUrls: true,
       },
     ],
