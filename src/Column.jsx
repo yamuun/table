@@ -4,26 +4,36 @@ import {Icon} from 'semantic-ui-react';
 import classNames from 'classnames';
 
 export default function Column(props: ColumnProps) {
-  const {style, className, children, sortState, updateSort, columns} = props;
+  const {
+    style,
+    className,
+    children,
+    sortState,
+    updateSortState,
+    columns,
+  } = props;
   const sortable = className.indexOf('-cursor-pointer') !== -1;
-
+  const resizable = className.indexOf('rt-resizable-header') !== -1;
   const column = columns.filter(column => {
     const target = children[0].props.children;
     return column.Header === target;
   });
-
   const sortKey = column[0].accessor;
 
-  if (children[1] && sortState) {
+  if (sortable && sortState && updateSortState) {
     return (
       <React.Fragment>
         <div
-          className={`rt-th ${className}`}
+          className={classNames({
+            'rt-th': true,
+            '-cursor-pointer': true,
+            'rt-resizable-header': resizable,
+          })}
           role="button"
           tabIndex={0}
           style={style}
           onClick={() => {
-            updateSort({
+            updateSortState({
               key: sortKey,
               order: sortState.order === 'asc' ? 'desc' : 'asc',
             });
@@ -49,28 +59,27 @@ export default function Column(props: ColumnProps) {
               />
             </span>
           </div>
-          <div className="rt-resizer" {...children[1].props} />
-        </div>
-      </React.Fragment>
-    );
-  } else if (children[1]) {
-    return (
-      <React.Fragment>
-        <div className={`rt-th ${className}`} style={style}>
-          <div className={children[0].props.style}>
-            {children[0].props.children}
-          </div>
-          <div className="rt-resizer" {...children[1].props} />
+          {resizable ? (
+            <div className="rt-resizer" {...children[1].props} />
+          ) : null}
         </div>
       </React.Fragment>
     );
   } else {
     return (
       <React.Fragment>
-        <div className={`rt-th ${className}`} style={style}>
+        <div
+          className={classNames({
+            'rt-th': true,
+            'rt-resizable-header': resizable,
+          })}
+          style={style}>
           <div className={children[0].props.style}>
             {children[0].props.children}
           </div>
+          {resizable ? (
+            <div className="rt-resizer" {...children[1].props} />
+          ) : null}
         </div>
       </React.Fragment>
     );

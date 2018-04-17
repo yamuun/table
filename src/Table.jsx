@@ -13,7 +13,7 @@ export default function Table(props: TableProps) {
     columns = [],
     loading,
     sortState,
-    updateSort,
+    updateSortState,
     noDataMessage,
   } = props;
 
@@ -32,7 +32,7 @@ export default function Table(props: TableProps) {
               {...e}
               columns={columns}
               sortState={sortState}
-              updateSort={updateSort}
+              updateSortState={updateSortState}
             />
           );
         }}

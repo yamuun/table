@@ -96,6 +96,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@dump247/storybook-state": "^1.4.0",
     "@gemcook/table": "0.2.7",
     "classnames": "2.2.5",
     "prop-types": "15.6.1",

@@ -3,6 +3,26 @@
 //   declare function hasStringsLowerAndUpper(value: string): boolean;
 // }
 
+// Table Stateless Component
+declare type TableProps = {
+  data: [] | Array<*>,
+  columns:
+    | [
+        {
+          Header: string,
+          accessor: string,
+          resizable: boolean,
+          sortable: boolean,
+        },
+      ]
+    | Array<*>,
+  loading: boolean,
+  sortState: {},
+  updateSortState: () => void,
+  noDataMessage: string,
+};
+declare function Table<T>(): T;
+
 // Column Stateless Component
 declare type ColumnProps = {
   style: {},
@@ -20,7 +40,7 @@ declare type ColumnProps = {
     key: string,
     order: string,
   },
-  updateSort: ({}) => void,
+  updateSortState: ({}) => void,
   columns: [],
 };
 declare function Column<T>(): T;
@@ -34,14 +54,3 @@ declare type NoDataProps = {
   noDataMessage: string,
 };
 declare function NoData<T>(): T;
-
-// Table Stateless Component
-declare type TableProps = {
-  data: [] | Array<*>,
-  columns: [] | Array<*>,
-  loading: boolean,
-  sortState: {},
-  updateSort: () => void,
-  noDataMessage: string,
-};
-declare function Table<T>(): T;
