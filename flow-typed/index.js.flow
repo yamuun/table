@@ -20,6 +20,7 @@ declare type TableProps = {
   sortState: {},
   updateSortState: () => void,
   noDataMessage: string,
+  isNoOutline: boolean,
 };
 declare function Table<T>(): T;
 
