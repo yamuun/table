@@ -15,10 +15,15 @@ export default function Table(props: TableProps) {
     sortState,
     updateSortState,
     noDataMessage,
+    isNoOutline,
   } = props;
 
   return (
-    <div className="gc__table">
+    <div
+      className="gc__table"
+      style={{
+        boxShadow: isNoOutline ? 'none' : '0 0 30px #e9ecef',
+      }}>
       <ReactTable
         data={data}
         columns={columns}

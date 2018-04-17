@@ -17,7 +17,31 @@ storiesOf('Table', module)
   .add(
     'default',
     withState({data: dummyData})(({store}) => {
-      return <Table data={store.state.data} columns={Default(dummyProps)} />;
+      return (
+        <div
+          style={{
+            padding: '50px',
+          }}>
+          <Table data={store.state.data} columns={Default(dummyProps)} />
+        </div>
+      );
+    }),
+  )
+  .add(
+    'no outline',
+    withState({data: dummyData})(({store}) => {
+      return (
+        <div
+          style={{
+            padding: '50px',
+          }}>
+          <Table
+            isNoOutline
+            data={store.state.data}
+            columns={Default(dummyProps)}
+          />
+        </div>
+      );
     }),
   )
   .add(
@@ -30,16 +54,21 @@ storiesOf('Table', module)
       },
     })(({store}) => {
       return (
-        <Table
-          data={store.state.data}
-          columns={Sort(dummyProps)}
-          sortState={store.state.sortState}
-          updateSortState={sortState => {
-            store.set({
-              sortState,
-            });
-          }}
-        />
+        <div
+          style={{
+            padding: '50px',
+          }}>
+          <Table
+            data={store.state.data}
+            columns={Sort(dummyProps)}
+            sortState={store.state.sortState}
+            updateSortState={sortState => {
+              store.set({
+                sortState,
+              });
+            }}
+          />
+        </div>
       );
     }),
   )
@@ -53,19 +82,40 @@ storiesOf('Table', module)
       },
     })(({store}) => {
       return (
-        <Table
-          data={store.state.data}
-          columns={Resize(dummyProps)}
-          sortState={store.state.sortState}
-        />
+        <div
+          style={{
+            padding: '50px',
+          }}>
+          <Table
+            data={store.state.data}
+            columns={Resize(dummyProps)}
+            sortState={store.state.sortState}
+          />
+        </div>
       );
     }),
   )
-  .add('no data', () => <Table data={[]} columns={Default(dummyProps)} />)
+  .add('no data', () => (
+    <div
+      style={{
+        padding: '50px',
+      }}>
+      <Table data={[]} columns={Default(dummyProps)} />
+    </div>
+  ))
   .add('no data(custom message)', () => (
-    <Table
-      noDataMessage="アイテムはありません"
-      data={[]}
-      columns={Default(dummyProps)}
-    />
+    <div
+      style={{
+        padding: '50px',
+      }}>
+      <Table
+        noDataMessage="アイテムはありません"
+        data={[]}
+        columns={Default(dummyProps)}
+      />
+    </div>
   ));
+
+storiesOf('Table & Pagination(local)', module);
+
+storiesOf('Table & Pagination(remote)', module);
