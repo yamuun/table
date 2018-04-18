@@ -13,6 +13,7 @@ const url = require('rollup-plugin-url');
 const scss = require('rollup-plugin-scss');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const resolve = require('rollup-plugin-node-resolve');
+const postcss = require('rollup-plugin-postcss');
 
 // const closureOptions = {
 //   compilationLevel: 'SIMPLE',
@@ -49,20 +50,23 @@ async function build() {
         peerDepsExternal(),
         json(),
         url(),
-        scss({
-          // Callback that will be called ongenerate with two arguments:
-          // - styles: the contents of all style tags combined:
-          // 'body { color: green }'
-          // - styleNodes: an array of style objects:
-          // { filename: 'body { ... }' }
-          output: function(styles, styleNodes) {
-            fs.writeFileSync(resolvePath('base.css'), styles, {
-              encoding: 'utf-8',
-            });
-          },
-          // Determine if node process
-          // should be terminated on error (default: false)
-          failOnError: true,
+        // scss({
+        //   // Callback that will be called ongenerate with two arguments:
+        //   // - styles: the contents of all style tags combined:
+        //   // 'body { color: green }'
+        //   // - styleNodes: an array of style objects:
+        //   // { filename: 'body { ... }' }
+        //   output: function(styles, styleNodes) {
+        //     fs.writeFileSync(resolvePath('base.css'), styles, {
+        //       encoding: 'utf-8',
+        //     });
+        //   },
+        //   // Determine if node process
+        //   // should be terminated on error (default: false)
+        //   failOnError: true,
+        // }),
+        postcss({
+          extensions: ['.css'],
         }),
         commonjs({
           include: 'node_modules/**',
@@ -73,8 +77,14 @@ async function build() {
               'Fragment',
               'Children',
               'createElement',
+              'createFactory',
             ],
             'node_modules/react-dom/index.js': ['render'],
+            'node_modules/@gemcook/pagination/lib/index.umd.js': [
+              'Pagination',
+              'asyncPagination',
+              'syncPagination',
+            ],
           },
         }),
         babel({
@@ -146,6 +156,10 @@ async function build() {
       file: resolvePath('lib/index.umd.js'),
       name: 'Table',
       exports: 'named',
+      globals: {
+        react: 'React',
+        'react-dom': 'ReactDOM',
+      },
     });
   } catch (error) {
     console.error(error);
