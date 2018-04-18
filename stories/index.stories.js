@@ -8,6 +8,8 @@ import {Table} from '../src';
 import {dummyData, dummyProps} from './dummy';
 import {Default, Sort, Resize} from './TableColumns';
 
+import './../styles/index.scss';
+
 storiesOf('Welcome', module).add('to Gemcook Component', () => (
   <Welcome showApp={linkTo('Button')} />
 ));
