@@ -3,7 +3,7 @@
     color: $table-bg-color;
   }
 
-  border: none;
+  border: none !important;
   border-radius: 4px;
 
   div {
@@ -30,7 +30,7 @@
 
     &.-header {
       height: 70px;
-      box-shadow: none;
+      box-shadow: none !important;
     }
   }
 
@@ -39,8 +39,8 @@
     border-bottom: 3px solid $table-thead-border-color;
 
     .rt-th {
-      padding-top: 25px;
-      border: none;
+      padding-top: 25px !important;
+      border: none !important;
       margin-left: 5px;
       color: $table-th-text-color;
       font-weight: bold;
@@ -75,7 +75,7 @@
           }
 
           &:hover {
-            background-color: rgba($table-main-color, 0.07);
+            background-color: rgba($table-main-color, 0.07) !important;
           }
         }
 
@@ -90,7 +90,7 @@
           }
 
           &:hover {
-            background-color: rgba($table-main-color, 0.07);
+            background-color: rgba($table-main-color, 0.07) !important;
           }
         }
       }

@@ -6,6 +6,7 @@ import Loading from './Loading';
 import Column from './Column';
 import {Pagination} from '@gemcook/pagination';
 import enhance from './enhancer';
+
 import 'react-table/react-table.css';
 
 function Table(props: TableProps) {
