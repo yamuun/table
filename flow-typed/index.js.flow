@@ -21,6 +21,10 @@ declare type TableProps = {
   updateSortState: () => void,
   noDataMessage: string,
   outline: boolean,
+  current: number,
+  updateCurrent: (current: number) => void,
+  pagination: boolean,
+  paginationPosition: string,
 };
 declare function Table<T>(): T;
 

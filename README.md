@@ -29,13 +29,16 @@ yarn add @gemcook/table
 
 ### Props
 
-| **Parameter**   | **Type**     | **Required** | **Description** |
-| :-------------- | :----------- | :----------- | :-------------- |
-| data            | Array        | true         | \-              |
-| columns         | ReactElement | true         | \-              |
-| sortState       | Object       | true         | \-              |
-| updateSortState | Function     | true         | \-              |
-| outline         | Boolean      | false        | \-              |
+| **Parameter**      | **Type**     | **Required** | **Default**         | **Description** |
+| :----------------- | :----------- | :----------- | :------------------ | :-------------- |
+| data               | Array        | true         | undefined           | \-              |
+| columns            | ReactElement | true         | undefined           | \-              |
+| sortState          | Object       | true         | undefined           | \-              |
+| updateSortState    | Function     | true         | undefined           | \-              |
+| outline            | Boolean      | false        | true                | \-              |
+| noDataMessage      | String       | false        | Data does not exist | \-              |
+| pagination         | Boolean      | false        | false               | \-              |
+| paginationPosition | String       | false        | right               | \-              |
 
 ### API
 

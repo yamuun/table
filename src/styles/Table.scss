@@ -1,62 +1,85 @@
 .gc__table {
-  border: {
-    radius: 4px;
-  }
+  .b__table {
+    border: {
+      radius: 4px;
+    }
 
-  .gc__nodata {
-    position: absolute;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    color: $table-nodata-text-color;
-    font-size: 12px;
-    background: {
-      color: rgba(white, 0.6);
+    .gc__nodata {
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      color: $table-nodata-text-color;
+      font-size: 12px;
+      background: {
+        color: rgba(white, 0.6);
+      }
+    }
+
+    .gc__loading {
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      background: {
+        color: rgba(white, 0.6);
+      }
+    }
+
+    .noclick {
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    .b__sort {
+      .icon {
+        margin: 0;
+
+        &.triangle.up {
+          position: absolute;
+          bottom: 30px;
+          color: $table-sort-default-color !important;
+
+          &.sortKey.asc {
+            color: $table-main-color !important;
+          }
+        }
+
+        &.triangle.down {
+          position: absolute;
+          bottom: 25px;
+          color: $table-sort-default-color !important;
+
+          &.sortKey.desc {
+            color: $table-main-color !important;
+          }
+        }
+      }
     }
   }
 
-  .gc__loading {
-    position: absolute;
+  .outline {
+    box-shadow: 0 0 30px #e9ecef;
+  }
+
+  .b__pagination {
     display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    background: {
-      color: rgba(white, 0.6);
+    justify-content: flex-end;
+
+    &.hidden {
+      display: none;
     }
-  }
 
-  .noclick {
-    opacity: 0.85;
-    pointer-events: none;
-  }
+    &.center {
+      justify-content: center;
+    }
 
-  .b__sort {
-    .icon {
-      margin: 0;
-
-      &.triangle.up {
-        position: absolute;
-        bottom: 30px;
-        color: $table-sort-default-color !important;
-
-        &.sortKey.asc {
-          color: $table-main-color !important;
-        }
-      }
-
-      &.triangle.down {
-        position: absolute;
-        bottom: 25px;
-        color: $table-sort-default-color !important;
-
-        &.sortKey.desc {
-          color: $table-main-color !important;
-        }
-      }
+    &.left {
+      justify-content: flex-start;
     }
   }
 }

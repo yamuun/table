@@ -4,7 +4,7 @@ import type {HOC} from 'recompose';
 
 const enhance: HOC<*, *> = compose(
   setDisplayName('Table'),
-  withState('currentPage', 'updateCurrentPage', 1),
+  withState('current', 'updateCurrent', 1),
 );
 
 export default enhance;

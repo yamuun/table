@@ -8,7 +8,7 @@ import {Table} from '../src';
 import {dummyData, dummyProps} from './dummy';
 import {Default, Sort, Resize} from './TableColumns';
 
-import './styles/index.scss';
+import './../src/styles/index.scss';
 
 storiesOf('Welcome', module).add('to Gemcook Component', () => (
   <Welcome showApp={linkTo('Button')} />
@@ -111,7 +111,7 @@ storiesOf('Table', module)
         padding: '50px',
       }}>
       <Table
-        noDataMessage="アイテムはありません"
+        noDataMessage="データが存在しません"
         data={[]}
         columns={Default(dummyProps)}
       />
@@ -132,6 +132,42 @@ storiesOf('Table & Pagination(local)', module)
             data={store.state.data}
             columns={Default(dummyProps)}
             pagination
+          />
+        </div>
+      );
+    }),
+  )
+  .add(
+    'position center',
+    withState({data: dummyData})(({store}) => {
+      return (
+        <div
+          style={{
+            padding: '50px',
+          }}>
+          <Table
+            data={store.state.data}
+            columns={Default(dummyProps)}
+            pagination
+            paginationPosition="center"
+          />
+        </div>
+      );
+    }),
+  )
+  .add(
+    'position left',
+    withState({data: dummyData})(({store}) => {
+      return (
+        <div
+          style={{
+            padding: '50px',
+          }}>
+          <Table
+            data={store.state.data}
+            columns={Default(dummyProps)}
+            pagination
+            paginationPosition="left"
           />
         </div>
       );

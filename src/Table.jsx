@@ -4,6 +4,7 @@ import ReactTable from 'react-table';
 import NoData from './NoData';
 import Loading from './Loading';
 import Column from './Column';
+import classNames from 'classnames';
 import {Pagination} from '@gemcook/pagination';
 import enhance from './enhancer';
 
@@ -18,16 +19,19 @@ function Table(props: TableProps) {
     updateSortState,
     noDataMessage,
     outline,
-    currentPage,
+    current,
+    pagination,
+    updateCurrent,
+    paginationPosition,
   } = props;
 
   return (
-    <React.Fragment>
+    <div className="gc__table">
       <div
-        className="gc__table"
-        style={{
-          boxShadow: outline !== false ? '0 0 30px #e9ecef' : 'none',
-        }}>
+        className={classNames({
+          b__table: true,
+          outline: outline === true || outline === undefined,
+        })}>
         <ReactTable
           data={data}
           columns={columns}
@@ -50,7 +54,7 @@ function Table(props: TableProps) {
               return null;
             }
             return (
-              <NoData noDataMessage={noDataMessage || 'データがありません'} />
+              <NoData noDataMessage={noDataMessage || 'Data does not exist'} />
             );
           }}
           LoadingComponent={() => {
@@ -61,10 +65,22 @@ function Table(props: TableProps) {
           }}
         />
       </div>
-      <div>
-        <Pagination current={currentPage} total={100} />
+      <div
+        className={classNames({
+          b__pagination: true,
+          hidden: pagination === false || pagination === undefined,
+          left: paginationPosition === 'left',
+          center: paginationPosition === 'center',
+        })}>
+        <Pagination
+          current={current}
+          total={data.length}
+          changePage={current => {
+            updateCurrent(current);
+          }}
+        />
       </div>
-    </React.Fragment>
+    </div>
   );
 }
 
