@@ -98,7 +98,7 @@
   },
   "dependencies": {
     "@dump247/storybook-state": "^1.4.0",
-    "@gemcook/pagination": "0.2.5",
+    "@gemcook/pagination": "0.3.2",
     "classnames": "2.2.5",
     "prop-types": "15.6.1",
     "react": "16.3.1",

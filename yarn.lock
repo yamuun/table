@@ -671,11 +671,10 @@
   dependencies:
     react-json-view "^1.13.3"
 
-"@gemcook/pagination@0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@gemcook/pagination/-/pagination-0.2.5.tgz#74108c3b22bec4f9353a4c2a0f9218f92c50a21f"
+"@gemcook/pagination@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@gemcook/pagination/-/pagination-0.3.2.tgz#6c0e9ddfc939536733127744da5d3e9f05b81c28"
   dependencies:
-    "@dump247/storybook-state" "^1.4.0"
     classnames "2.2.5"
     prop-types "15.6.1"
     rc-pagination "1.16.2"

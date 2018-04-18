@@ -1,5 +1,7 @@
 /* @flow */
-export {default as Table} from './Table';
-export {default as Loading} from './Loading';
-export {default as NoData} from './NoData';
-export {default as Column} from './Column';
+import Table from './Table';
+import Loading from './Loading';
+import NoData from './NoData';
+import Column from './Column';
+
+export {Table, Loading, NoData, Column};
