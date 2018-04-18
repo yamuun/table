@@ -36,9 +36,9 @@ storiesOf('Table', module)
             padding: '50px',
           }}>
           <Table
-            isNoOutline
             data={store.state.data}
             columns={Default(dummyProps)}
+            outline={false}
           />
         </div>
       );
@@ -116,6 +116,24 @@ storiesOf('Table', module)
     </div>
   ));
 
-storiesOf('Table & Pagination(local)', module);
+storiesOf('Table & Pagination(local)', module)
+  .addDecorator((story, context) => withInfo('common info')(story)(context))
+  .add(
+    'default',
+    withState({data: dummyData})(({store}) => {
+      return (
+        <div
+          style={{
+            padding: '50px',
+          }}>
+          <Table
+            data={store.state.data}
+            columns={Default(dummyProps)}
+            pagination
+          />
+        </div>
+      );
+    }),
+  );
 
 storiesOf('Table & Pagination(remote)', module);

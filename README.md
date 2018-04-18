@@ -29,6 +29,14 @@ yarn add @gemcook/table
 
 ### Props
 
+| **Parameter**   | **Type**     | **Required** | **Description** |
+| :-------------- | :----------- | :----------- | :-------------- |
+| data            | Array        | true         | \-              |
+| columns         | ReactElement | true         | \-              |
+| sortState       | Object       | true         | \-              |
+| updateSortState | Function     | true         | \-              |
+| outline         | Boolean      | false        | \-              |
+
 ### API
 
 ## License
