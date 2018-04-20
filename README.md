@@ -2,6 +2,8 @@
 
 ---
 
+[![npm version](https://badge.fury.io/js/%40gemcook%2Ftable.svg)](https://badge.fury.io/js/%40gemcook%2Ftable)
+
 React Table Component.
 
 ## Online Demo
