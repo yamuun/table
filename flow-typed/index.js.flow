@@ -23,6 +23,7 @@ declare type TableProps = {
   outline: boolean,
   current: number,
   updateCurrent: (current: number) => void,
+  pageSize: number,
   pagination: boolean,
   paginationPosition: string,
 };

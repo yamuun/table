@@ -31,16 +31,17 @@ yarn add @gemcook/table
 
 ### Props
 
-| **Parameter**      | **Type**     | **Required** | **Default**         | **Description** |
-| :----------------- | :----------- | :----------- | :------------------ | :-------------- |
-| data               | Array        | true         | undefined           | \-              |
-| columns            | ReactElement | true         | undefined           | \-              |
-| sortState          | Object       | true         | undefined           | \-              |
-| updateSortState    | Function     | true         | undefined           | \-              |
-| outline            | Boolean      | false        | true                | \-              |
-| noDataMessage      | String       | false        | Data does not exist | \-              |
-| pagination         | Boolean      | false        | false               | \-              |
-| paginationPosition | String       | false        | right               | \-              |
+| **Parameter**      | **Type**                    | **Required** | **Default**         | **Description** |
+| :----------------- | :-------------------------- | :----------- | :------------------ | :-------------- |
+| data               | Array                       | true         | undefined           | \-              |
+| columns            | ReactElement                | true         | undefined           | \-              |
+| sortState          | object                      | true         | undefined           | \-              |
+| updateSortState    | (sortState: object) => void | true         | undefined           | \-              |
+| outline            | boolean                     | false        | true                | \-              |
+| noDataMessage      | string                      | false        | Data does not exist | \-              |
+| pagination         | boolean                     | false        | false               | \-              |
+| paginationPosition | string                      | false        | right               | \-              |
+| defaultPageSize    | number                      | false        | right               | \-              |
 
 ### API
 
