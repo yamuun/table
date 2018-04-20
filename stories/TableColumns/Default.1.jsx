@@ -40,26 +40,26 @@ export default function TableColumns(props: Props) {
       },
     },
     {
-      Header: '果物ID',
+      Header: 'ID',
       width: 100,
       sortable: true,
       accessor: 'id',
     },
     {
-      Header: '果物名',
+      Header: 'Name',
       sortable: true,
       accessor: 'name',
     },
     {
-      Header: '価格',
+      Header: 'Price',
       sortable: true,
       accessor: 'price',
       Cell: (row: Row) => {
-        return <div>{`¥ ${row.original.price.toLocaleString()}`}</div>;
+        return <div>{`$ ${row.original.price.toLocaleString()}`}</div>;
       },
     },
     {
-      Header: '生産地',
+      Header: 'Producing area',
       sortable: true,
       accessor: 'prefectures',
     },

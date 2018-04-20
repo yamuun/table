@@ -21,28 +21,28 @@ type Row = {
 export default function TableColumns(props: Props) {
   return [
     {
-      Header: '果物ID',
+      Header: 'ID',
       accessor: 'id',
       sortable: true,
       resizable: false,
     },
     {
-      Header: '果物名',
+      Header: 'Name',
       accessor: 'name',
       sortable: true,
       resizable: false,
     },
     {
-      Header: '価格',
+      Header: 'Price',
       accessor: 'price',
       sortable: true,
       resizable: false,
       Cell: (row: Row) => {
-        return <div>{`¥ ${row.original.price.toLocaleString()}`}</div>;
+        return <div>{`$ ${row.original.price.toLocaleString()}`}</div>;
       },
     },
     {
-      Header: '生産地',
+      Header: 'Producing area',
       accessor: 'prefectures',
       sortable: true,
       resizable: false,
