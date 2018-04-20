@@ -40,8 +40,8 @@
 
     .rt-th {
       padding-top: 25px !important;
+      padding-left: 25px !important;
       border: none !important;
-      margin-left: 5px;
       color: $table-th-text-color;
       font-weight: bold;
     }
@@ -66,6 +66,9 @@
 
         &.-odd {
           .rt-td {
+            display: flex;
+            align-items: center;
+            padding-left: 25px;
             border-right: none;
             color: $table-td-text-color;
 
@@ -81,6 +84,9 @@
 
         &.-even {
           .rt-td {
+            display: flex;
+            align-items: center;
+            padding-left: 25px;
             border-right: none;
             color: $table-td-text-color;
 
