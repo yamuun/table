@@ -115,7 +115,7 @@ const TablePaginationLocalStories = () => {
                 }}
                 showSizeChanger
                 updatePageSize={(current: number, pageSize: number) => {
-                  store.set({current});
+                  store.set({current: 1});
                   store.set({pageSize});
                   const nextActiveData = makeLocalActiveData(dummyData, current, pageSize);
                   store.set({activeData: nextActiveData})
