@@ -26,6 +26,8 @@ declare type TableProps = {
   pageSize: number,
   pagination: boolean,
   paginationPosition: string,
+  showSizeChanger: boolean,
+  updatePageSize: (pageSize: number) => void,
 };
 declare function Table<T>(): T;
 

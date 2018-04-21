@@ -81,30 +81,7 @@ const TableStories = () => {
             style={{
               padding: '50px',
             }}>
-            <Table
-              data={store.state.data}
-              columns={Resize(dummyProps)}
-              sortState={store.state.sortState}
-            />
-          </div>
-        );
-      }),
-    )
-    .add(
-      'page size',
-      withState({
-        data: dummyData,
-      })(({store}) => {
-        return (
-          <div
-            style={{
-              padding: '50px',
-            }}>
-            <Table
-              data={store.state.data}
-              pageSize={30}
-              columns={Default(dummyProps)}
-            />
+            <Table data={store.state.data} columns={Resize(dummyProps)} />
           </div>
         );
       }),

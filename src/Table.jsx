@@ -24,6 +24,8 @@ function Table(props: TableProps) {
     updateCurrent,
     paginationPosition,
     pageSize,
+    showSizeChanger,
+    updatePageSize,
   } = props;
 
   return (
@@ -36,7 +38,7 @@ function Table(props: TableProps) {
         <ReactTable
           data={data}
           columns={columns}
-          pageSize={pageSize ? pageSize : 10}
+          pageSize={pageSize}
           showPaginationBottom={false}
           className="-striped -highlight"
           loading={loading}
@@ -76,8 +78,14 @@ function Table(props: TableProps) {
         <Pagination
           current={current}
           total={data.length}
-          changePage={current => {
+          pageSize={pageSize}
+          changePage={(current: number) => {
             updateCurrent(current);
+          }}
+          showSizeChanger={showSizeChanger}
+          onShowSizeChange={(current: number, pageSize: number) => {
+            updateCurrent(current);
+            updatePageSize(pageSize);
           }}
         />
       </div>

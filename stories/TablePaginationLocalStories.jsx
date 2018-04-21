@@ -61,6 +61,25 @@ const TablePaginationLocalStories = () => {
           </div>
         );
       }),
+    )
+    .add(
+      'change page size',
+      withState({data: dummyData, pageSize: 10})(({store}) => {
+        return (
+          <div
+            style={{
+              padding: '50px',
+            }}>
+            <Table
+              data={store.state.data}
+              columns={Default(dummyProps)}
+              pageSize={store.state.pageSize}
+              pagination
+              showSizeChanger
+            />
+          </div>
+        );
+      }),
     );
 };
 
