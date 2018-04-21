@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {linkTo} from '@storybook/addon-links';
 import {Welcome} from '@storybook/react/demo';
 import TableStories from './TableStories.jsx';
-import TablePaginationLocalStories from './TablePaginationLocalStories.jsx';
+import LocalDataStories from './LocalDataStories.jsx';
 
 import './../src/styles/index.scss';
 
@@ -12,6 +12,5 @@ storiesOf('Welcome', module).add('to Gemcook Component', () => (
 ));
 
 TableStories();
-TablePaginationLocalStories();
+LocalDataStories();
 
-storiesOf('Table & Pagination(remote)', module);
