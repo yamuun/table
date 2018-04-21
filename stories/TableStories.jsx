@@ -20,7 +20,6 @@ const TableStories = () => {
               }}>
               <Table
                 activeData={store.state.activeData}
-                total={store.state}
                 columns={Default(dummyProps)}
                 current={store.state.current}
                 pageSize={store.state.pageSize}
@@ -41,7 +40,6 @@ const TableStories = () => {
               }}>
               <Table
                 activeData={store.state.activeData}
-                total={store.state.acti}
                 columns={Default(dummyProps)}
                 current={store.state.current}
                 pageSize={store.state.pageSize}
@@ -70,7 +68,6 @@ const TableStories = () => {
             }}>
             <Table
               activeData={store.state.activeData}
-              total={store.state.acti}
               columns={Sort(dummyProps)}
               current={store.state.current}
               pageSize={store.state.pageSize}
@@ -103,7 +100,6 @@ const TableStories = () => {
             }}>
             <Table
               activeData={store.state.activeData}
-              total={store.state.acti}
               columns={Resize(dummyProps)}
               current={store.state.current}
               pageSize={store.state.pageSize}
