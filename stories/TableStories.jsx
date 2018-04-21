@@ -11,45 +11,51 @@ const TableStories = () => {
     .addDecorator((story, context) => withInfo('common info')(story)(context))
     .add(
       'default',
-      withState({data: dummyData, current: 1, pageSize: 10})(({store}) => {
-        return (
-          <div
-            style={{
-              padding: '50px',
-            }}>
-            <Table
-              data={store.state.data}
-              columns={Default(dummyProps)}
-              current={store.state.current}
-              pageSize={store.state.pageSize}
-            />
-          </div>
-        );
-      }),
+      withState({activeData: dummyData, current: 1, pageSize: 10})(
+        ({store}) => {
+          return (
+            <div
+              style={{
+                padding: '50px',
+              }}>
+              <Table
+                activeData={store.state.activeData}
+                total={store.state}
+                columns={Default(dummyProps)}
+                current={store.state.current}
+                pageSize={store.state.pageSize}
+              />
+            </div>
+          );
+        },
+      ),
     )
     .add(
       'no outline',
-      withState({data: dummyData, current: 1, pageSize: 10})(({store}) => {
-        return (
-          <div
-            style={{
-              padding: '50px',
-            }}>
-            <Table
-              data={store.state.data}
-              columns={Default(dummyProps)}
-              current={store.state.current}
-              pageSize={store.state.pageSize}
-              outline={false}
-            />
-          </div>
-        );
-      }),
+      withState({activeData: dummyData, current: 1, pageSize: 10})(
+        ({store}) => {
+          return (
+            <div
+              style={{
+                padding: '50px',
+              }}>
+              <Table
+                activeData={store.state.activeData}
+                total={store.state.acti}
+                columns={Default(dummyProps)}
+                current={store.state.current}
+                pageSize={store.state.pageSize}
+                outline={false}
+              />
+            </div>
+          );
+        },
+      ),
     )
     .add(
       'sort',
       withState({
-        data: dummyData,
+        activeData: dummyData,
         sortState: {
           key: 'id',
           order: 'desc',
@@ -63,7 +69,8 @@ const TableStories = () => {
               padding: '50px',
             }}>
             <Table
-              data={store.state.data}
+              activeData={store.state.activeData}
+              total={store.state.acti}
               columns={Sort(dummyProps)}
               current={store.state.current}
               pageSize={store.state.pageSize}
@@ -81,7 +88,7 @@ const TableStories = () => {
     .add(
       'resize',
       withState({
-        data: dummyData,
+        activeData: dummyData,
         sortState: {
           key: 'id',
           order: 'desc',
@@ -95,7 +102,8 @@ const TableStories = () => {
               padding: '50px',
             }}>
             <Table
-              data={store.state.data}
+              activeData={store.state.activeData}
+              total={store.state.acti}
               columns={Resize(dummyProps)}
               current={store.state.current}
               pageSize={store.state.pageSize}
@@ -104,27 +112,27 @@ const TableStories = () => {
         );
       }),
     )
-    .add('no data', () => (
+    .add('no activeData', () => (
       <div
         style={{
           padding: '50px',
         }}>
         <Table
-          data={[]}
+          activeData={[]}
           columns={Default(dummyProps)}
           current={1}
           pageSize={10}
         />
       </div>
     ))
-    .add('no data(custom message)', () => (
+    .add('no activeData(custom)', () => (
       <div
         style={{
           padding: '50px',
         }}>
         <Table
           noDataMessage="データが存在しません"
-          data={[]}
+          activeData={[]}
           columns={Default(dummyProps)}
           current={1}
           pageSize={10}

@@ -68,7 +68,7 @@ async function build() {
             'node_modules/@gemcook/pagination/lib/index.umd.js': [
               'Pagination',
               'asyncPagination',
-              'syncPagination',
+              'makeLocalActiveData',
             ],
           },
         }),

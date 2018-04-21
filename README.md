@@ -24,6 +24,25 @@ yarn add @gemcook/table
 
 ## Usage
 
+### SCSS
+
+#### Import `@gemcook/table/lib/styles/index.scss` to your SCSS.
+
+```scss
+@import "~@gemcook/table/lib/styles/index";
+```
+
+### Local Pagination
+
+#### Use 'makeLocalActiveData' to generate activeData.
+
+```js
+```
+
+### Remote Pagination
+
+## Example
+
 ```jsx
 ```
 
@@ -31,24 +50,31 @@ yarn add @gemcook/table
 
 ### Props
 
-| **Parameter**      | **Type**                                    | **Required** | **Default**         | **Description**    |
-| :----------------- | :------------------------------------------ | :----------- | :------------------ | :----------------- |
-| activeData         | [any]                                       | true         | undefined           | \-                 |
-| columns            | ReactElement                                | true         | undefined           | \-                 |
-| pageSize           | number                                      | true         | undefined           | \-                 |
-| current            | number                                      | true         | undefined           | \-                 |
-| total              | number                                      | true         | undefined           | \-                 |
-| updateCurrent      | (current: number) => void                   | true         | undefined           | \-                 |
-| updatePageSize     | (current: number, pageSize: number) => void | false        | undefined           | \-                 |
-| updateSortState    | (sortState: object) => void                 | flase        | undefined           | \-                 |
-| sortState          | {key: string, order: enum}                  | false        | undefined           | Enum: `asc` `desc` |
-| noDataMessage      | string                                      | false        | Data does not exist | \-                 |
-| outline            | boolean                                     | false        | true                | \-                 |
-| showPagination     | boolean                                     | false        | false               | \-                 |
-| paginationPosition | string                                      | false        | right               | \-                 |
-| showSizeChanger    | boolean                                     | false        | false               | \-                 |
+| **Parameter**      | **Type**                                    | **Required** | **Default**           | **Description**    |
+| :----------------- | :------------------------------------------ | :----------- | :-------------------- | :----------------- |
+| activeData         | [any]                                       | true         | undefined             | \-                 |
+| columns            | ReactElement                                | true         | undefined             | \-                 |
+| pageSize           | number                                      | true         | undefined             | \-                 |
+| current            | number                                      | true         | undefined             | \-                 |
+| total              | number                                      | true         | undefined             | \-                 |
+| updateCurrent      | (current: number) => void                   | true         | undefined             | \-                 |
+| updatePageSize     | (current: number, pageSize: number) => void | false        | undefined             | \-                 |
+| updateSortState    | (sortState: object) => void                 | flase        | undefined             | \-                 |
+| sortState          | {key: string, order: enum}                  | false        | undefined             | Enum: `asc` `desc` |
+| noDataMessage      | string                                      | false        | 'Data does not exist' | \-                 |
+| outline            | boolean                                     | false        | true                  | \-                 |
+| showPagination     | boolean                                     | false        | false                 | \-                 |
+| paginationPosition | string                                      | false        | right                 | \-                 |
+| showSizeChanger    | boolean                                     | false        | false                 | \-                 |
 
 ### API
+
+#### makeLocalActiveData
+
+* 'makeLocalActiveData' generates 'activeData' from the target data.
+
+```js
+```
 
 ## License
 

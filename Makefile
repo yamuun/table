@@ -23,3 +23,6 @@ prepublish:
 
 build:
 	yarn run build-storybook
+
+publish:
+	yarn publish --access public

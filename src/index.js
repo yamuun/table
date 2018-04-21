@@ -1,7 +1,5 @@
 /* @flow */
 import Table from './Table';
-import Loading from './Loading';
-import NoData from './NoData';
-import Column from './Column';
+import {makeLocalActiveData, makeRemotePagination} from './utils';
 
-export {Table, Loading, NoData, Column};
+export {Table, makeLocalActiveData, makeRemotePagination};

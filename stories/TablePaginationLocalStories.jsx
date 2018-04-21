@@ -11,14 +11,14 @@ const TablePaginationLocalStories = () => {
     .addDecorator((story, context) => withInfo('common info')(story)(context))
     .add(
       'default',
-      withState({data: dummyData, current: 1, pageSize: 10})(({store}) => {
+      withState({activeData: dummyData, current: 1, pageSize: 10})(({store}) => {
         return (
           <div
             style={{
               padding: '50px',
             }}>
             <Table
-              data={store.state.data}
+              activeData={store.state.activeData}
               columns={Default(dummyProps)}
               showPagination
               current={store.state.current}
@@ -33,14 +33,14 @@ const TablePaginationLocalStories = () => {
     )
     .add(
       'position center',
-      withState({data: dummyData, current: 1, pageSize: 10})(({store}) => {
+      withState({activeData: dummyData, current: 1, pageSize: 10})(({store}) => {
         return (
           <div
             style={{
               padding: '50px',
             }}>
             <Table
-              data={store.state.data}
+              activeData={store.state.activeData}
               columns={Default(dummyProps)}
               showPagination
               current={store.state.current}
@@ -56,14 +56,14 @@ const TablePaginationLocalStories = () => {
     )
     .add(
       'position left',
-      withState({data: dummyData, current: 1, pageSize: 10})(({store}) => {
+      withState({activeData: dummyData, current: 1, pageSize: 10})(({store}) => {
         return (
           <div
             style={{
               padding: '50px',
             }}>
             <Table
-              data={store.state.data}
+              activeData={store.state.activeData}
               columns={Default(dummyProps)}
               showPagination
               current={store.state.current}
@@ -79,14 +79,14 @@ const TablePaginationLocalStories = () => {
     )
     .add(
       'change page size',
-      withState({data: dummyData, current: 1, pageSize: 10})(({store}) => {
+      withState({activeData: dummyData, current: 1, pageSize: 10})(({store}) => {
         return (
           <div
             style={{
               padding: '50px',
             }}>
             <Table
-              data={store.state.data}
+              activeData={store.state.activeData}
               columns={Default(dummyProps)}
               showPagination
               current={store.state.current}
@@ -106,14 +106,14 @@ const TablePaginationLocalStories = () => {
     )
     .add(
       'change page size options',
-      withState({data: dummyData, current: 1, pageSize: 1})(({store}) => {
+      withState({activeData: dummyData, current: 1, pageSize: 1})(({store}) => {
         return (
           <div
             style={{
               padding: '50px',
             }}>
             <Table
-              data={store.state.data}
+              activeData={store.state.activeData}
               columns={Default(dummyProps)}
               pageSize={store.state.pageSize}
               showPagination
