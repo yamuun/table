@@ -21,6 +21,7 @@ function Table(props: TableProps) {
     outline,
     current,
     showPagination,
+    total,
     updateCurrent,
     paginationPosition,
     pageSize,
@@ -77,7 +78,7 @@ function Table(props: TableProps) {
           center: paginationPosition === 'center',
         })}>
         <Pagination
-          total={activeData.length}
+          total={total}
           current={current}
           pageSize={pageSize}
           changePage={(current: number) => {

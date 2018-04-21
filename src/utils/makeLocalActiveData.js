@@ -2,7 +2,7 @@
 export default function makeLocalActiveData(
   data: Array<*>,
   current: number,
-  updateCurrent: number => void,
+  pageSize: number,
 ): Array<*> {
   let startIndex;
   let endIndex;
@@ -10,15 +10,14 @@ export default function makeLocalActiveData(
 
   if (String(data.length).slice(-1) === '0' && nextCurrent !== 1) {
     nextCurrent -= 1;
-    updateCurrent(nextCurrent);
   }
 
-  if (nextCurrent === 1) {
+  if (nextCurrent === 1 && current === 1) {
     startIndex = 0;
-    endIndex = 10;
+    endIndex = pageSize;
   } else {
-    startIndex = Number(String(nextCurrent - 1) + '0');
-    endIndex = Number(String(nextCurrent) + '0');
+    startIndex = Number(String((current - 1) * Number(String(pageSize).slice(0, -1))) + '0');
+    endIndex = Number(String(current * Number(String(pageSize).slice(0, -1))) + '0');
   }
 
   return data.slice(startIndex, endIndex);
