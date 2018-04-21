@@ -20,12 +20,13 @@ function Table(props: TableProps) {
     noDataMessage,
     outline,
     current,
-    pagination,
+    showPagination,
     updateCurrent,
     paginationPosition,
     pageSize,
     showSizeChanger,
     updatePageSize,
+    pageSizeOptions,
   } = props;
 
   return (
@@ -71,22 +72,22 @@ function Table(props: TableProps) {
       <div
         className={classNames({
           b__pagination: true,
-          hidden: pagination === false || pagination === undefined,
+          hidden: showPagination === false || showPagination === undefined,
           left: paginationPosition === 'left',
           center: paginationPosition === 'center',
         })}>
         <Pagination
-          current={current}
           total={data.length}
+          current={current}
           pageSize={pageSize}
           changePage={(current: number) => {
             updateCurrent(current);
           }}
           showSizeChanger={showSizeChanger}
           onShowSizeChange={(current: number, pageSize: number) => {
-            updateCurrent(current);
-            updatePageSize(pageSize);
+            updatePageSize(current, pageSize);
           }}
+          pageSizeOptions={pageSizeOptions}
         />
       </div>
     </div>

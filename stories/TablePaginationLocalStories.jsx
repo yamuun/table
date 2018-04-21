@@ -11,7 +11,7 @@ const TablePaginationLocalStories = () => {
     .addDecorator((story, context) => withInfo('common info')(story)(context))
     .add(
       'default',
-      withState({data: dummyData})(({store}) => {
+      withState({data: dummyData, current: 1, pageSize: 10})(({store}) => {
         return (
           <div
             style={{
@@ -20,7 +20,12 @@ const TablePaginationLocalStories = () => {
             <Table
               data={store.state.data}
               columns={Default(dummyProps)}
-              pagination
+              showPagination
+              current={store.state.current}
+              pageSize={store.state.pageSize}
+              updateCurrent={(current: number) => {
+                store.set({current});
+              }}
             />
           </div>
         );
@@ -28,7 +33,7 @@ const TablePaginationLocalStories = () => {
     )
     .add(
       'position center',
-      withState({data: dummyData})(({store}) => {
+      withState({data: dummyData, current: 1, pageSize: 10})(({store}) => {
         return (
           <div
             style={{
@@ -37,7 +42,12 @@ const TablePaginationLocalStories = () => {
             <Table
               data={store.state.data}
               columns={Default(dummyProps)}
-              pagination
+              showPagination
+              current={store.state.current}
+              pageSize={store.state.pageSize}
+              updateCurrent={(current: number) => {
+                store.set({current});
+              }}
               paginationPosition="center"
             />
           </div>
@@ -46,7 +56,7 @@ const TablePaginationLocalStories = () => {
     )
     .add(
       'position left',
-      withState({data: dummyData})(({store}) => {
+      withState({data: dummyData, current: 1, pageSize: 10})(({store}) => {
         return (
           <div
             style={{
@@ -55,7 +65,12 @@ const TablePaginationLocalStories = () => {
             <Table
               data={store.state.data}
               columns={Default(dummyProps)}
-              pagination
+              showPagination
+              current={store.state.current}
+              pageSize={store.state.pageSize}
+              updateCurrent={(current: number) => {
+                store.set({current});
+              }}
               paginationPosition="left"
             />
           </div>
@@ -64,7 +79,34 @@ const TablePaginationLocalStories = () => {
     )
     .add(
       'change page size',
-      withState({data: dummyData, pageSize: 10})(({store}) => {
+      withState({data: dummyData, current: 1, pageSize: 10})(({store}) => {
+        return (
+          <div
+            style={{
+              padding: '50px',
+            }}>
+            <Table
+              data={store.state.data}
+              columns={Default(dummyProps)}
+              showPagination
+              current={store.state.current}
+              pageSize={store.state.pageSize}
+              updateCurrent={(current: number) => {
+                store.set({current});
+              }}
+              showSizeChanger
+              updatePageSize={(current: number, pageSize: number) => {
+                store.set({current});
+                store.set({pageSize});
+              }}
+            />
+          </div>
+        );
+      }),
+    )
+    .add(
+      'change page size options',
+      withState({data: dummyData, current: 1, pageSize: 1})(({store}) => {
         return (
           <div
             style={{
@@ -74,8 +116,17 @@ const TablePaginationLocalStories = () => {
               data={store.state.data}
               columns={Default(dummyProps)}
               pageSize={store.state.pageSize}
-              pagination
+              showPagination
+              current={store.state.current}
+              updateCurrent={(current: number) => {
+                store.set({current});
+              }}
               showSizeChanger
+              updatePageSize={(current: number, pageSize: number) => {
+                store.set({current});
+                store.set({pageSize});
+              }}
+              pageSizeOptions={['1', '2', '3']}
             />
           </div>
         );

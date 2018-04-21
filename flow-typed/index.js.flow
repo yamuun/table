@@ -24,10 +24,11 @@ declare type TableProps = {
   current: number,
   updateCurrent: (current: number) => void,
   pageSize: number,
-  pagination: boolean,
+  showPagination: boolean,
   paginationPosition: string,
   showSizeChanger: boolean,
-  updatePageSize: (pageSize: number) => void,
+  updatePageSize: (current: number, pageSize: number) => void,
+  pageSizeOptions: [string],
 };
 declare function Table<T>(): T;
 

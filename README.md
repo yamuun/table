@@ -31,19 +31,21 @@ yarn add @gemcook/table
 
 ### Props
 
-| **Parameter**      | **Type**                    | **Required** | **Default**         | **Description**  |
-| :----------------- | :-------------------------- | :----------- | :------------------ | :--------------- |
-| data               | []                          | true         | undefined           | \-               |
-| columns            | ReactElement                | true         | undefined           | \-               |
-| defaultPageSize    | number                      | false        | 10                  | \-               |
-| pageSize           | number                      | false        | 10                  | state controlled |
-| outline            | boolean                     | false        | true                | \-               |
-| noDataMessage      | string                      | false        | Data does not exist | \-               |
-| sortState          | {}                          | false        | undefined           | \-               |
-| updateSortState    | (sortState: object) => void | flase        | undefined           | \-               |
-| pagination         | boolean                     | false        | false               | \-               |
-| paginationPosition | string                      | false        | right               | \-               |
-| showSizeChanger    | boolean                     | false        | false               | \-               |
+| **Parameter**      | **Type**                                    | **Required** | **Default**         | **Description** |
+| :----------------- | :------------------------------------------ | :----------- | :------------------ | :-------------- |
+| data               | []                                          | true         | undefined           | \-              |
+| columns            | ReactElement                                | true         | undefined           | \-              |
+| pageSize           | number                                      | true         | undefined           | \-              |
+| current            | number                                      | true         | undefined           | \-              |
+| outline            | boolean                                     | false        | true                | \-              |
+| noDataMessage      | string                                      | false        | Data does not exist | \-              |
+| sortState          | {}                                          | false        | undefined           | \-              |
+| updateSortState    | (sortState: object) => void                 | flase        | undefined           | \-              |
+| showPagination     | boolean                                     | false        | false               | \-              |
+| updateCurrent      | (current: number) => void                   | false        | undefined           | \-              |
+| updatePageSize     | (current: number, pageSize: number) => void | undefined    | \-                  |
+| paginationPosition | string                                      | false        | right               | \-              |
+| showSizeChanger    | boolean                                     | false        | false               | \-              |
 
 ### API
 

@@ -11,20 +11,7 @@ const TableStories = () => {
     .addDecorator((story, context) => withInfo('common info')(story)(context))
     .add(
       'default',
-      withState({data: dummyData})(({store}) => {
-        return (
-          <div
-            style={{
-              padding: '50px',
-            }}>
-            <Table data={store.state.data} columns={Default(dummyProps)} />
-          </div>
-        );
-      }),
-    )
-    .add(
-      'no outline',
-      withState({data: dummyData})(({store}) => {
+      withState({data: dummyData, current: 1, pageSize: 10})(({store}) => {
         return (
           <div
             style={{
@@ -33,6 +20,26 @@ const TableStories = () => {
             <Table
               data={store.state.data}
               columns={Default(dummyProps)}
+              current={store.state.current}
+              pageSize={store.state.pageSize}
+            />
+          </div>
+        );
+      }),
+    )
+    .add(
+      'no outline',
+      withState({data: dummyData, current: 1, pageSize: 10})(({store}) => {
+        return (
+          <div
+            style={{
+              padding: '50px',
+            }}>
+            <Table
+              data={store.state.data}
+              columns={Default(dummyProps)}
+              current={store.state.current}
+              pageSize={store.state.pageSize}
               outline={false}
             />
           </div>
@@ -47,6 +54,8 @@ const TableStories = () => {
           key: 'id',
           order: 'desc',
         },
+        current: 1,
+        pageSize: 10,
       })(({store}) => {
         return (
           <div
@@ -56,6 +65,8 @@ const TableStories = () => {
             <Table
               data={store.state.data}
               columns={Sort(dummyProps)}
+              current={store.state.current}
+              pageSize={store.state.pageSize}
               sortState={store.state.sortState}
               updateSortState={sortState => {
                 store.set({
@@ -75,13 +86,20 @@ const TableStories = () => {
           key: 'id',
           order: 'desc',
         },
+        current: 1,
+        pageSize: 10,
       })(({store}) => {
         return (
           <div
             style={{
               padding: '50px',
             }}>
-            <Table data={store.state.data} columns={Resize(dummyProps)} />
+            <Table
+              data={store.state.data}
+              columns={Resize(dummyProps)}
+              current={store.state.current}
+              pageSize={store.state.pageSize}
+            />
           </div>
         );
       }),
@@ -91,7 +109,12 @@ const TableStories = () => {
         style={{
           padding: '50px',
         }}>
-        <Table data={[]} columns={Default(dummyProps)} />
+        <Table
+          data={[]}
+          columns={Default(dummyProps)}
+          current={1}
+          pageSize={10}
+        />
       </div>
     ))
     .add('no data(custom message)', () => (
@@ -103,6 +126,8 @@ const TableStories = () => {
           noDataMessage="データが存在しません"
           data={[]}
           columns={Default(dummyProps)}
+          current={1}
+          pageSize={10}
         />
       </div>
     ));
