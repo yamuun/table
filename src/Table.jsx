@@ -12,7 +12,7 @@ import 'react-table/react-table.css';
 
 function Table(props: TableProps) {
   const {
-    data = [],
+    activeData = [],
     columns = [],
     loading,
     sortState,
@@ -37,7 +37,7 @@ function Table(props: TableProps) {
           outline: outline === true || outline === undefined,
         })}>
         <ReactTable
-          data={data}
+          data={activeData}
           columns={columns}
           pageSize={pageSize}
           showPaginationBottom={false}
@@ -77,7 +77,7 @@ function Table(props: TableProps) {
           center: paginationPosition === 'center',
         })}>
         <Pagination
-          total={data.length}
+          total={activeData.length}
           current={current}
           pageSize={pageSize}
           changePage={(current: number) => {
