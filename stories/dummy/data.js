@@ -1,3 +1,4 @@
+/* @flow */
 export default [
   {id: 1, name: 'Apple', price: 5, prefectures: 'Aomori'},
   {id: 2, name: 'Orange', price: 8, prefectures: 'Ehime'},

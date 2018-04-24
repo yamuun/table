@@ -1,22 +1,22 @@
 /* @flow */
 import * as React from 'react';
 
-type Props = {
-  addCartList: ({}) => void,
-  updateSelectedList: ({}) => void,
-  removeTargetNum: ({}) => void,
-  fruits: {
+type Props = {|
+  addCartList?: ({}) => void,
+  updateSelectedList?: ({}) => void,
+  removeTargetNum?: ({}) => void,
+  fruits?: {
     selectedList: [],
   },
-};
+|};
 
-type Row = {
+type Row = {|
   original: {
     id: number,
     num: number,
     price: number,
   },
-};
+|};
 
 export default function TableColumns(props: Props) {
   return [

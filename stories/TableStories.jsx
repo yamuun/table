@@ -1,4 +1,5 @@
-import React from 'react';
+/* @flow */
+import * as React from 'react';
 import {storiesOf} from '@storybook/react';
 import {withInfo} from '@storybook/addon-info';
 import {withState} from '@dump247/storybook-state';
@@ -11,47 +12,43 @@ const TableStories = () => {
     .add(
       'default',
       withState({activeData: dummyData, current: 1, pageSize: 10})(
-        withInfo(`Table Information`)(
-          ({store}) => {
-            return (
-              <div
-                style={{
-                  padding: '50px',
-                }}>
-                <Table
-                  activeData={store.state.activeData}
-                  columns={Default(dummyProps)}
-                  current={store.state.current}
-                  pageSize={store.state.pageSize}
-                />
-              </div>
-            );
-          },
-        ),
+        withInfo(`Table Information`)(({store}) => {
+          return (
+            <div
+              style={{
+                padding: '50px',
+              }}>
+              <Table
+                activeData={store.state.activeData}
+                columns={Default(dummyProps)}
+                current={store.state.current}
+                pageSize={store.state.pageSize}
+              />
+            </div>
+          );
+        }),
       ),
     )
     .add(
       'no outline',
       withState({activeData: dummyData, current: 1, pageSize: 10})(
-        withInfo(`Table Information`)(
-          ({store}) => {
-            return (
-              <div
-                style={{
-                  padding: '50px',
-                }}>
-                <Table
-                  activeData={store.state.activeData}
-                  columns={Default(dummyProps)}
-                  current={store.state.current}
-                  pageSize={store.state.pageSize}
-                  outline={false}
-                />
-              </div>
-            );
-          },
-        ),
-      )
+        withInfo(`Table Information`)(({store}) => {
+          return (
+            <div
+              style={{
+                padding: '50px',
+              }}>
+              <Table
+                activeData={store.state.activeData}
+                columns={Default(dummyProps)}
+                current={store.state.current}
+                pageSize={store.state.pageSize}
+                outline={false}
+              />
+            </div>
+          );
+        }),
+      ),
     )
     .add(
       'sort',
@@ -64,8 +61,7 @@ const TableStories = () => {
         current: 1,
         pageSize: 10,
       })(
-        withInfo(`Table Information`)(
-          ({store}) => {
+        withInfo(`Table Information`)(({store}) => {
           return (
             <div
               style={{
@@ -86,7 +82,7 @@ const TableStories = () => {
             </div>
           );
         }),
-     )
+      ),
     )
     .add(
       'resize',
@@ -99,8 +95,7 @@ const TableStories = () => {
         current: 1,
         pageSize: 10,
       })(
-        withInfo(`Table Information`)(
-          ({store}) => {
+        withInfo(`Table Information`)(({store}) => {
           return (
             <div
               style={{
@@ -113,26 +108,25 @@ const TableStories = () => {
                 pageSize={store.state.pageSize}
               />
             </div>
-          )
+          );
         }),
-      )
+      ),
     )
-    .add('no activeData', 
-      withInfo(`Table Information`)(
-        () => (
-          <div
-            style={{
-              padding: '50px',
-            }}>
-            <Table
-              activeData={[]}
-              columns={Default(dummyProps)}
-              current={1}
-              pageSize={10}
-            />
-          </div>
-        )
-      )
+    .add(
+      'no activeData',
+      withInfo(`Table Information`)(() => (
+        <div
+          style={{
+            padding: '50px',
+          }}>
+          <Table
+            activeData={[]}
+            columns={Default(dummyProps)}
+            current={1}
+            pageSize={10}
+          />
+        </div>
+      )),
     )
     .add('no activeData(custom)', () => (
       <div
@@ -166,7 +160,11 @@ const TableStories = () => {
                 pageSize={store.state.pageSize}
                 updateCurrent={(current: number) => {
                   store.set({current});
-                  const nextActiveData = makeLocalActiveData(dummyData, current, store.state.pageSize);
+                  const nextActiveData = makeLocalActiveData(
+                    dummyData,
+                    current,
+                    store.state.pageSize,
+                  );
                   store.set({activeData: nextActiveData});
                 }}
               />
@@ -193,7 +191,11 @@ const TableStories = () => {
                 pageSize={store.state.pageSize}
                 updateCurrent={(current: number) => {
                   store.set({current});
-                  const nextActiveData = makeLocalActiveData(dummyData, current, store.state.pageSize);
+                  const nextActiveData = makeLocalActiveData(
+                    dummyData,
+                    current,
+                    store.state.pageSize,
+                  );
                   store.set({activeData: nextActiveData});
                 }}
                 paginationPosition="center"
@@ -221,7 +223,11 @@ const TableStories = () => {
                 pageSize={store.state.pageSize}
                 updateCurrent={(current: number) => {
                   store.set({current});
-                  const nextActiveData = makeLocalActiveData(dummyData, current, store.state.pageSize);
+                  const nextActiveData = makeLocalActiveData(
+                    dummyData,
+                    current,
+                    store.state.pageSize,
+                  );
                   store.set({activeData: nextActiveData});
                 }}
                 paginationPosition="left"
@@ -230,7 +236,7 @@ const TableStories = () => {
           );
         },
       ),
-    )
+    );
 };
 
 export default TableStories;

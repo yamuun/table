@@ -1,4 +1,5 @@
-import React from 'react';
+/* @flow */
+import * as React from 'react';
 import {storiesOf} from '@storybook/react';
 import {withInfo} from '@storybook/addon-info';
 import {withState} from '@dump247/storybook-state';
