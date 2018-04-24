@@ -29,6 +29,7 @@ declare type TableProps = {
   showSizeChanger: boolean,
   updatePageSize: (current: number, pageSize: number) => void,
   pageSizeOptions: [string],
+  total: number,
 };
 declare function Table<T>(): T;
 

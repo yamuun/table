@@ -16,8 +16,12 @@ export default function makeLocalActiveData(
     startIndex = 0;
     endIndex = pageSize;
   } else {
-    startIndex = Number(String((current - 1) * Number(String(pageSize).slice(0, -1))) + '0');
-    endIndex = Number(String(current * Number(String(pageSize).slice(0, -1))) + '0');
+    startIndex = Number(
+      String((current - 1) * Number(String(pageSize).slice(0, -1))) + '0',
+    );
+    endIndex = Number(
+      String(current * Number(String(pageSize).slice(0, -1))) + '0',
+    );
   }
 
   return data.slice(startIndex, endIndex);

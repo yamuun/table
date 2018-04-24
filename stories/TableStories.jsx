@@ -8,47 +8,50 @@ import {Default, Sort, Resize} from './TableColumns';
 
 const TableStories = () => {
   storiesOf('Table', module)
-    .addDecorator((story, context) => withInfo('common info')(story)(context))
     .add(
       'default',
       withState({activeData: dummyData, current: 1, pageSize: 10})(
-        ({store}) => {
-          return (
-            <div
-              style={{
-                padding: '50px',
-              }}>
-              <Table
-                activeData={store.state.activeData}
-                columns={Default(dummyProps)}
-                current={store.state.current}
-                pageSize={store.state.pageSize}
-              />
-            </div>
-          );
-        },
+        withInfo(`Table Information`)(
+          ({store}) => {
+            return (
+              <div
+                style={{
+                  padding: '50px',
+                }}>
+                <Table
+                  activeData={store.state.activeData}
+                  columns={Default(dummyProps)}
+                  current={store.state.current}
+                  pageSize={store.state.pageSize}
+                />
+              </div>
+            );
+          },
+        ),
       ),
     )
     .add(
       'no outline',
       withState({activeData: dummyData, current: 1, pageSize: 10})(
-        ({store}) => {
-          return (
-            <div
-              style={{
-                padding: '50px',
-              }}>
-              <Table
-                activeData={store.state.activeData}
-                columns={Default(dummyProps)}
-                current={store.state.current}
-                pageSize={store.state.pageSize}
-                outline={false}
-              />
-            </div>
-          );
-        },
-      ),
+        withInfo(`Table Information`)(
+          ({store}) => {
+            return (
+              <div
+                style={{
+                  padding: '50px',
+                }}>
+                <Table
+                  activeData={store.state.activeData}
+                  columns={Default(dummyProps)}
+                  current={store.state.current}
+                  pageSize={store.state.pageSize}
+                  outline={false}
+                />
+              </div>
+            );
+          },
+        ),
+      )
     )
     .add(
       'sort',
@@ -60,27 +63,30 @@ const TableStories = () => {
         },
         current: 1,
         pageSize: 10,
-      })(({store}) => {
-        return (
-          <div
-            style={{
-              padding: '50px',
-            }}>
-            <Table
-              activeData={store.state.activeData}
-              columns={Sort(dummyProps)}
-              current={store.state.current}
-              pageSize={store.state.pageSize}
-              sortState={store.state.sortState}
-              updateSortState={sortState => {
-                store.set({
-                  sortState,
-                });
-              }}
-            />
-          </div>
-        );
-      }),
+      })(
+        withInfo(`Table Information`)(
+          ({store}) => {
+          return (
+            <div
+              style={{
+                padding: '50px',
+              }}>
+              <Table
+                activeData={store.state.activeData}
+                columns={Sort(dummyProps)}
+                current={store.state.current}
+                pageSize={store.state.pageSize}
+                sortState={store.state.sortState}
+                updateSortState={sortState => {
+                  store.set({
+                    sortState,
+                  });
+                }}
+              />
+            </div>
+          );
+        }),
+     )
     )
     .add(
       'resize',
@@ -92,35 +98,42 @@ const TableStories = () => {
         },
         current: 1,
         pageSize: 10,
-      })(({store}) => {
-        return (
+      })(
+        withInfo(`Table Information`)(
+          ({store}) => {
+          return (
+            <div
+              style={{
+                padding: '50px',
+              }}>
+              <Table
+                activeData={store.state.activeData}
+                columns={Resize(dummyProps)}
+                current={store.state.current}
+                pageSize={store.state.pageSize}
+              />
+            </div>
+          )
+        }),
+      )
+    )
+    .add('no activeData', 
+      withInfo(`Table Information`)(
+        () => (
           <div
             style={{
               padding: '50px',
             }}>
             <Table
-              activeData={store.state.activeData}
-              columns={Resize(dummyProps)}
-              current={store.state.current}
-              pageSize={store.state.pageSize}
+              activeData={[]}
+              columns={Default(dummyProps)}
+              current={1}
+              pageSize={10}
             />
           </div>
-        );
-      }),
+        )
+      )
     )
-    .add('no activeData', () => (
-      <div
-        style={{
-          padding: '50px',
-        }}>
-        <Table
-          activeData={[]}
-          columns={Default(dummyProps)}
-          current={1}
-          pageSize={10}
-        />
-      </div>
-    ))
     .add('no activeData(custom)', () => (
       <div
         style={{
