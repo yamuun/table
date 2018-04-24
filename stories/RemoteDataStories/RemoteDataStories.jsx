@@ -7,8 +7,8 @@ import {Table, makeLocalActiveData} from '../src';
 import {dummyData, dummyProps} from './dummy';
 import {Default} from './TableColumns';
 
-const TablePaginationLocalStories = () => {
-  storiesOf('Local data', module)
+const RemoteDataStories = () => {
+  storiesOf('Remote data', module)
     .addDecorator((story, context) => withInfo('common info')(story)(context))
     .add(
       'default',
@@ -133,4 +133,4 @@ const TablePaginationLocalStories = () => {
     );
 };
 
-export default TablePaginationLocalStories;
+export default LocalDataStories;
