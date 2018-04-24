@@ -51,6 +51,27 @@ const TableStories = () => {
       ),
     )
     .add(
+      'loading',
+      withState({activeData: dummyData, current: 1, pageSize: 10})(
+        withInfo(`Table Information`)(({store}) => {
+          return (
+            <div
+              style={{
+                padding: '50px',
+              }}>
+              <Table
+                loading={true}
+                activeData={store.state.activeData}
+                columns={Default(dummyProps)}
+                current={store.state.current}
+                pageSize={store.state.pageSize}
+              />
+            </div>
+          );
+        }),
+      ),
+    )  
+    .add(
       'sort',
       withState({
         activeData: dummyData,
@@ -128,7 +149,7 @@ const TableStories = () => {
         </div>
       )),
     )
-    .add('no activeData(custom)', () => (
+    .add('no activeData (custom)', () => (
       <div
         style={{
           padding: '50px',
@@ -143,7 +164,7 @@ const TableStories = () => {
       </div>
     ))
     .add(
-      'pagination(position default)',
+      'pagination (position default)',
       withState({activeData: dummyData, current: 1, pageSize: 10})(
         ({store}) => {
           return (
@@ -174,7 +195,7 @@ const TableStories = () => {
       ),
     )
     .add(
-      'pagination(position center)',
+      'pagination (position center)',
       withState({activeData: dummyData, current: 1, pageSize: 10})(
         ({store}) => {
           return (
@@ -206,7 +227,7 @@ const TableStories = () => {
       ),
     )
     .add(
-      'pagination(position left)',
+      'pagination (position left)',
       withState({activeData: dummyData, current: 1, pageSize: 10})(
         ({store}) => {
           return (
