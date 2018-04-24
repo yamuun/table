@@ -3,9 +3,9 @@ import * as React from 'react';
 import {storiesOf} from '@storybook/react';
 import {withInfo} from '@storybook/addon-info';
 import {withState} from '@dump247/storybook-state';
-import {Table, makeLocalActiveData} from '../src';
-import {dummyData, dummyProps} from './dummy';
-import {Default, Sort, Resize} from './TableColumns';
+import {Table, makeLocalActiveData} from '../../src';
+import {dummyData, dummyProps} from '../dummy';
+import {Default, Sort, Resize} from '../TableColumns';
 
 const TableStories = () => {
   storiesOf('Table', module)
