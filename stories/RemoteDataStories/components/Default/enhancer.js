@@ -5,7 +5,7 @@ import {
   setDisplayName,
   withHandlers,
   withState,
-  type HOC
+  type HOC,
 } from 'recompose';
 import {getFruits} from './../../api';
 import {makeRemotePagination} from './../../../../src/utils';
@@ -26,34 +26,52 @@ const enhance: HOC<*, *> = compose(
   withState('afterNear', 'updateAfterNear', []),
   withState('afterDistant', 'updateAfterDistant', []),
   withHandlers({
-    updateRemotePagination: props => (nextCurrent:number) => {
+    updateRemotePagination: props => async (nextCurrent: number) => {
       const {
         active,
         first,
         last,
-        before_distant,
-        before_near,
-        after_near,
-        after_distant,
+        beforeDistant,
+        beforeNear,
+        afterNear,
+        afterDistant,
         current,
         updateCurrent,
         pagesCount,
-        updateActive
+        updateActive,
+        updateBeforeDistant,
+        updateBeforeNear,
+        updateAfterNear,
+        updateAfterDistant,
       } = props;
 
       const pages = {
         active,
         first,
         last,
-        before_distant,
-        before_near,
-        after_near,
-        after_distant,
+        beforeDistant,
+        beforeNear,
+        afterNear,
+        afterDistant,
       };
 
       updateCurrent(nextCurrent);
-      makeRemotePagination(pages, nextCurrent, current, pagesCount, updateActive);
-    }
+      makeRemotePagination(
+        pages,
+        nextCurrent,
+        current,
+        pagesCount,
+        updateActive,
+      );
+
+      const fruits = await getFruits(nextCurrent);
+
+      updateActive(fruits.pages.active);
+      updateBeforeDistant(fruits.pages.before_distant);
+      updateBeforeNear(fruits.pages.before_near);
+      updateAfterNear(fruits.pages.after_near);
+      updateAfterDistant(fruits.pages.after_distant);
+    },
   }),
   lifecycle({
     async componentDidMount() {
@@ -71,10 +89,11 @@ const enhance: HOC<*, *> = compose(
         updateAfterDistant,
         updateTotal,
         updatePagesCount,
+        current,
       } = this.props;
 
       try {
-        const fruits = await getFruits();
+        const fruits = await getFruits(current);
 
         updateTotal(fruits.totalCount);
         updatePagesCount(fruits.pagesCount);
@@ -86,11 +105,10 @@ const enhance: HOC<*, *> = compose(
         updateBeforeNear(fruits.pages.before_near);
         updateAfterNear(fruits.pages.after_near);
         updateAfterDistant(fruits.pages.after_distant);
-
         updateLoading(false);
       } catch (e) {
-        updateLoading(false)
-        console.log(e)
+        updateLoading(false);
+        console.log(e);
       }
     },
   }),

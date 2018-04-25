@@ -6,8 +6,13 @@ import {dummyData, dummyProps} from '../../../dummy';
 import enhance from './enhancer';
 
 type Props = {
-  loading: boolean
-}
+  loading: boolean,
+  current: number,
+  pageSize: number,
+  total: number,
+  active: [Object],
+  updateRemotePagination: any => void,
+};
 
 function Default(props: Props) {
   const {
@@ -16,7 +21,6 @@ function Default(props: Props) {
     loading,
     total,
     active,
-    updateCurrent,
     updateRemotePagination,
   } = props;
 
