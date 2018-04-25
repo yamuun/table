@@ -48,6 +48,7 @@ function Table(props: TableProps) {
             return (
               <Column
                 {...e}
+                activeData={activeData}
                 columns={columns}
                 sortState={sortState}
                 updateSortState={updateSortState}

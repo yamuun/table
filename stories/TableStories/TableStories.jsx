@@ -5,8 +5,8 @@ import {withInfo} from '@storybook/addon-info';
 import {withState} from '@dump247/storybook-state';
 import {Table} from '../../src';
 import {makeLocalActiveData} from '@gemcook/pagination';
-import {dummyData, dummyProps} from '../dummy';
-import {Default, Sort, Resize} from '../TableColumns';
+import {dummyData, dummyProps} from './dummy';
+import {Default, Sort, Resize} from '../components/TableColumns';
 
 const TableStories = () => {
   storiesOf('Table', module)
@@ -73,7 +73,7 @@ const TableStories = () => {
       ),
     )
     .add(
-      'sort',
+      'sort (comoing soon...)',
       withState({
         activeData: dummyData,
         sortState: {
@@ -150,7 +150,7 @@ const TableStories = () => {
         </div>
       )),
     )
-    .add('no activeData (custom)', () => (
+    .add('no activeData (custom)',withInfo(`Table Information`)(() => (
       <div
         style={{
           padding: '50px',
@@ -163,10 +163,12 @@ const TableStories = () => {
           pageSize={10}
         />
       </div>
-    ))
+    )),
+    )
     .add(
       'pagination (position default)',
       withState({activeData: dummyData, current: 1, pageSize: 10})(
+        withInfo(`Table Information`)(
         ({store}) => {
           return (
             <div
@@ -194,10 +196,11 @@ const TableStories = () => {
           );
         },
       ),
-    )
+    ))
     .add(
       'pagination (position center)',
       withState({activeData: dummyData, current: 1, pageSize: 10})(
+        withInfo(`Table Information`)(
         ({store}) => {
           return (
             <div
@@ -226,10 +229,11 @@ const TableStories = () => {
           );
         },
       ),
-    )
+    ))
     .add(
       'pagination (position left)',
       withState({activeData: dummyData, current: 1, pageSize: 10})(
+        withInfo(`Table Information`)(
         ({store}) => {
           return (
             <div
@@ -258,7 +262,7 @@ const TableStories = () => {
           );
         },
       ),
-    );
+    ));
 };
 
 export default TableStories;

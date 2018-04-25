@@ -1,8 +1,8 @@
 /* @flow */
 import * as React from 'react';
 import {Table} from '../../../../src';
-import {Default as TableColumns} from '../../../TableColumns';
-import {dummyData, dummyProps} from '../../../dummy';
+import {Default as TableColumns} from '../../../components/TableColumns';
+import {dummyProps} from './../../dummy';
 import enhance from './enhancer';
 
 type Props = {

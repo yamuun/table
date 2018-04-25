@@ -5,19 +5,18 @@ import {withInfo} from '@storybook/addon-info';
 import {withState} from '@dump247/storybook-state';
 import {Table} from '../../src';
 import {makeLocalActiveData} from '@gemcook/pagination'
-import {dummyData, dummyProps} from '../dummy';
-import {Default} from '../TableColumns';
+import {dummyData, dummyProps} from './dummy';
+import {Default} from '../components/TableColumns';
 
 const LocalDataStories = () => {
   storiesOf('Local data', module)
-    .addDecorator((story, context) => withInfo('common info')(story)(context))
     .add(
       'default',
       withState({
         activeData: makeLocalActiveData(dummyData, 1, 10),
         current: 1,
         pageSize: 10,
-      })(({store}) => {
+      })(withInfo('default')(({store}) => {
         return (
           <div
             style={{
@@ -42,7 +41,7 @@ const LocalDataStories = () => {
             />
           </div>
         );
-      }),
+      })),
     )
     .add(
       'change page size',
@@ -50,7 +49,7 @@ const LocalDataStories = () => {
         activeData: makeLocalActiveData(dummyData, 1, 10),
         current: 1,
         pageSize: 10,
-      })(({store}) => {
+      })(withInfo('default')(({store}) => {
         return (
           <div
             style={{
@@ -86,7 +85,7 @@ const LocalDataStories = () => {
             />
           </div>
         );
-      }),
+      })),
     )
     .add(
       'sort(coming soon...)',
@@ -94,7 +93,7 @@ const LocalDataStories = () => {
         activeData: makeLocalActiveData(dummyData, 1, 10),
         current: 1,
         pageSize: 10,
-      })(({store}) => {
+      })(withInfo('default')(({store}) => {
         return (
           <div
             style={{
@@ -130,7 +129,7 @@ const LocalDataStories = () => {
             />
           </div>
         );
-      }),
+      })),
     );
 };
 
