@@ -8,7 +8,7 @@ import {
   type HOC,
 } from 'recompose';
 import {getFruits} from './../../api';
-import {makeRemotePagination} from './../../../../src/utils';
+import {makeRemotePagination} from '@gemcook/pagination';
 import {Record} from 'immutable';
 
 const enhance: HOC<*, *> = compose(

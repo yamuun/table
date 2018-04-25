@@ -3,7 +3,8 @@ import * as React from 'react';
 import {storiesOf} from '@storybook/react';
 import {withInfo} from '@storybook/addon-info';
 import {withState} from '@dump247/storybook-state';
-import {Table, makeLocalActiveData} from '../../src';
+import {Table} from '../../src';
+import {makeLocalActiveData} from '@gemcook/pagination'
 import {dummyData, dummyProps} from '../dummy';
 import {Default} from '../TableColumns';
 

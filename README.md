@@ -67,14 +67,13 @@ yarn add @gemcook/table
 | paginationPosition | string                                      | false        | right                 | \-                 |
 | showSizeChanger    | boolean                                     | false        | false                 | \-                 |
 
-### API
+## API
 
-#### makeLocalActiveData
+### pagination integration
 
-* 'makeLocalActiveData' generates 'activeData' from the target data.
+Confirm the API of pagination from this link.
 
-```js
-```
+* https://github.com/gemcook/pagination
 
 ## License
 
