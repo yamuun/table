@@ -27,7 +27,7 @@ function Table(props: TableProps) {
     pageSize,
     showSizeChanger,
     updatePageSize,
-    pageSizeOptions,
+    disabledPagination,
   } = props;
 
   return (
@@ -59,7 +59,7 @@ function Table(props: TableProps) {
               return null;
             }
             return (
-              <NoData noDataMessage={noDataMessage || 'Data does not exist'} />
+              <NoData noDataMessage={noDataMessage || 'データが存在しません'} />
             );
           }}
           LoadingComponent={() => {
@@ -84,11 +84,11 @@ function Table(props: TableProps) {
           changePage={(current: number) => {
             updateCurrent(current);
           }}
+          disabled={disabledPagination}
           showSizeChanger={showSizeChanger}
-          onShowSizeChange={(current: number, pageSize: number) => {
+          changePageSize={(current: number, pageSize: number) => {
             updatePageSize(current, pageSize);
           }}
-          pageSizeOptions={pageSizeOptions}
         />
       </div>
     </div>

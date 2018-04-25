@@ -9,7 +9,6 @@ import {
 } from 'recompose';
 import {getFruits} from './../../api';
 import {makeRemotePagination} from '@gemcook/pagination';
-import {Record} from 'immutable';
 
 const enhance: HOC<*, *> = compose(
   setDisplayName('RemoteDataStories'),
@@ -18,6 +17,7 @@ const enhance: HOC<*, *> = compose(
   withState('loading', 'updateLoading', true),
   withState('total', 'updateTotal', 0),
   withState('pagesCount', 'updatePagesCount', 0),
+  withState('disabledPagination', 'updateDisabledPagination', false),
   withState('active', 'updateActive', []),
   withState('first', 'updateFirst', []),
   withState('last', 'updateLast', []),
@@ -43,6 +43,7 @@ const enhance: HOC<*, *> = compose(
         updateBeforeNear,
         updateAfterNear,
         updateAfterDistant,
+        updateDisabledPagination,
       } = props;
 
       const pages = {
@@ -56,6 +57,8 @@ const enhance: HOC<*, *> = compose(
       };
 
       updateCurrent(nextCurrent);
+      updateDisabledPagination(true);
+
       makeRemotePagination(
         pages,
         nextCurrent,
@@ -71,14 +74,13 @@ const enhance: HOC<*, *> = compose(
       updateBeforeNear(fruits.pages.before_near);
       updateAfterNear(fruits.pages.after_near);
       updateAfterDistant(fruits.pages.after_distant);
+
+      updateDisabledPagination(false);
     },
   }),
   lifecycle({
     async componentDidMount() {
       const {
-        loading,
-        total,
-        pagesCount,
         updateLoading,
         updateActive,
         updateFirst,

@@ -12,6 +12,7 @@ type Props = {
   total: number,
   active: [Object],
   updateRemotePagination: any => void,
+  disabledPagination: boolean,
 };
 
 function Default(props: Props) {
@@ -22,6 +23,7 @@ function Default(props: Props) {
     total,
     active,
     updateRemotePagination,
+    disabledPagination,
   } = props;
 
   return (
@@ -38,6 +40,7 @@ function Default(props: Props) {
         current={current}
         pageSize={pageSize}
         updateCurrent={updateRemotePagination}
+        disabledPagination={disabledPagination}
       />
     </div>
   );

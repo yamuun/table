@@ -156,7 +156,7 @@ const TableStories = () => {
           padding: '50px',
         }}>
         <Table
-          noDataMessage="データが存在しません"
+          noDataMessage="Data does not exist"
           activeData={[]}
           columns={Default(dummyProps)}
           current={1}
