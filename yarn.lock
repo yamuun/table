@@ -671,9 +671,9 @@
   dependencies:
     react-json-view "^1.13.3"
 
-"@gemcook/pagination@^0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@gemcook/pagination/-/pagination-0.6.1.tgz#b99296c83f5780dd9f79fbdcf0a06ccc7644e4d0"
+"@gemcook/pagination@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@gemcook/pagination/-/pagination-1.0.0.tgz#59d251e2f29e64fd2e59be087c207a016da42a6b"
   dependencies:
     classnames "2.2.5"
     prop-types "15.6.1"

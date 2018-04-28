@@ -231,7 +231,7 @@ const TableStories = () => {
       ),
     ))
     .add(
-      'pagination (position left)',
+      'pagination (scroll top)',
       withState({activeData: dummyData, current: 1, pageSize: 10})(
         withInfo(`Table Information`)(
         ({store}) => {
@@ -256,13 +256,13 @@ const TableStories = () => {
                   );
                   store.set({activeData: nextActiveData});
                 }}
-                paginationPosition="left"
+                scrollTop
               />
             </div>
           );
         },
       ),
-    ));
+    ))
 };
 
 export default TableStories;
