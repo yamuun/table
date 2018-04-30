@@ -66,11 +66,11 @@ yarn add @gemcook/table
 | showPagination     | boolean                                     | false        | false                 | \-                 |
 | paginationPosition | string                                      | false        | right                 | \-                 |
 | showSizeChanger    | boolean                                     | false        | false                 | \-                 |
-| scrollTop    | boolean                                     | false        | false                 | \-                 |
+| scrollTop          | boolean                                     | false        | false                 | \-                 |
 
-## API
+### API
 
-### pagination integration
+#### pagination integration
 
 Confirm the API of pagination from this link.
 
