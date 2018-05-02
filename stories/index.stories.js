@@ -9,10 +9,6 @@ import {RemoteDataStories} from './RemoteDataStories';
 
 import './../src/styles/index.scss';
 
-storiesOf('Welcome', module).add('to Gemcook Component', () => (
-  <Welcome showApp={linkTo('Button')} />
-));
-
 TableStories();
 LocalDataStories();
 RemoteDataStories();

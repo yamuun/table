@@ -9,7 +9,7 @@ import {dummyData, dummyProps} from './dummy';
 import {Default, Sort, Resize} from '../components/TableColumns';
 
 const TableStories = () => {
-  storiesOf('Table', module)
+  storiesOf('Table UI', module)
     .add(
       'default',
       withState({activeData: dummyData, current: 1, pageSize: 10})(
