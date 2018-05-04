@@ -32,7 +32,7 @@ function Default(props: Props) {
         padding: '50px',
       }}>
       <Table
-        activeData={active}
+        active={active}
         columns={TableColumns(dummyProps)}
         showPagination
         total={total}

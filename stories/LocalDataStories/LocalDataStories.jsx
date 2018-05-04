@@ -13,7 +13,7 @@ const LocalDataStories = () => {
     .add(
       'default',
       withState({
-        activeData: makeLocalActiveData(dummyData, 1, 10),
+        active: makeLocalActiveData(dummyData, 1, 10),
         current: 1,
         pageSize: 10,
       })(withInfo('default')(({store}) => {
@@ -23,7 +23,7 @@ const LocalDataStories = () => {
               padding: '50px',
             }}>
             <Table
-              activeData={store.state.activeData}
+              active={store.state.active}
               columns={Default(dummyProps)}
               showPagination
               total={dummyData.length}
@@ -36,7 +36,7 @@ const LocalDataStories = () => {
                   current,
                   store.state.pageSize,
                 );
-                store.set({activeData: nextActiveData});
+                store.set({active: nextActiveData});
               }}
             />
           </div>
@@ -46,7 +46,7 @@ const LocalDataStories = () => {
     .add(
       'change page size',
       withState({
-        activeData: makeLocalActiveData(dummyData, 1, 10),
+        active: makeLocalActiveData(dummyData, 1, 10),
         current: 1,
         pageSize: 10,
       })(withInfo('default')(({store}) => {
@@ -56,7 +56,7 @@ const LocalDataStories = () => {
               padding: '50px',
             }}>
             <Table
-              activeData={store.state.activeData}
+              active={store.state.active}
               columns={Default(dummyProps)}
               showPagination
               total={dummyData.length}
@@ -69,7 +69,7 @@ const LocalDataStories = () => {
                   current,
                   store.state.pageSize,
                 );
-                store.set({activeData: nextActiveData});
+                store.set({active: nextActiveData});
               }}
               showSizeChanger
               updatePageSize={(current: number, pageSize: number) => {
@@ -80,7 +80,7 @@ const LocalDataStories = () => {
                   1,
                   pageSize,
                 );
-                store.set({activeData: nextActiveData});
+                store.set({active: nextActiveData});
               }}
             />
           </div>
@@ -90,7 +90,7 @@ const LocalDataStories = () => {
     .add(
       'sort(coming soon...)',
       withState({
-        activeData: makeLocalActiveData(dummyData, 1, 10),
+        active: makeLocalActiveData(dummyData, 1, 10),
         current: 1,
         pageSize: 10,
       })(withInfo('default')(({store}) => {
@@ -100,7 +100,7 @@ const LocalDataStories = () => {
               padding: '50px',
             }}>
             <Table
-              activeData={store.state.activeData}
+              active={store.state.active}
               columns={Default(dummyProps)}
               showPagination
               total={dummyData.length}
@@ -113,7 +113,7 @@ const LocalDataStories = () => {
                   current,
                   store.state.pageSize,
                 );
-                store.set({activeData: nextActiveData});
+                store.set({active: nextActiveData});
               }}
               showSizeChanger
               updatePageSize={(current: number, pageSize: number) => {
@@ -124,7 +124,7 @@ const LocalDataStories = () => {
                   1,
                   pageSize,
                 );
-                store.set({activeData: nextActiveData});
+                store.set({active: nextActiveData});
               }}
             />
           </div>

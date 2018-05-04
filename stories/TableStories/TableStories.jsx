@@ -12,7 +12,7 @@ const TableStories = () => {
   storiesOf('Table UI', module)
     .add(
       'default',
-      withState({activeData: dummyData, current: 1, pageSize: 10})(
+      withState({active: dummyData, current: 1, pageSize: 10})(
         withInfo(`Table Information`)(({store}) => {
           return (
             <div
@@ -20,7 +20,7 @@ const TableStories = () => {
                 padding: '50px',
               }}>
               <Table
-                activeData={store.state.activeData}
+                active={store.state.active}
                 columns={Default(dummyProps)}
                 current={store.state.current}
                 pageSize={store.state.pageSize}
@@ -32,7 +32,7 @@ const TableStories = () => {
     )
     .add(
       'no outline',
-      withState({activeData: dummyData, current: 1, pageSize: 10})(
+      withState({active: dummyData, current: 1, pageSize: 10})(
         withInfo(`Table Information`)(({store}) => {
           return (
             <div
@@ -40,7 +40,7 @@ const TableStories = () => {
                 padding: '50px',
               }}>
               <Table
-                activeData={store.state.activeData}
+                active={store.state.active}
                 columns={Default(dummyProps)}
                 current={store.state.current}
                 pageSize={store.state.pageSize}
@@ -53,7 +53,7 @@ const TableStories = () => {
     )
     .add(
       'loading',
-      withState({activeData: dummyData, current: 1, pageSize: 10})(
+      withState({active: dummyData, current: 1, pageSize: 10})(
         withInfo(`Table Information`)(({store}) => {
           return (
             <div
@@ -62,7 +62,7 @@ const TableStories = () => {
               }}>
               <Table
                 loading={true}
-                activeData={store.state.activeData}
+                active={store.state.active}
                 columns={Default(dummyProps)}
                 current={store.state.current}
                 pageSize={store.state.pageSize}
@@ -75,7 +75,7 @@ const TableStories = () => {
     .add(
       'sort (comoing soon...)',
       withState({
-        activeData: dummyData,
+        active: dummyData,
         sortState: {
           key: 'id',
           order: 'desc',
@@ -90,7 +90,7 @@ const TableStories = () => {
                 padding: '50px',
               }}>
               <Table
-                activeData={store.state.activeData}
+                active={store.state.active}
                 columns={Sort(dummyProps)}
                 current={store.state.current}
                 pageSize={store.state.pageSize}
@@ -109,7 +109,7 @@ const TableStories = () => {
     .add(
       'resize',
       withState({
-        activeData: dummyData,
+        active: dummyData,
         sortState: {
           key: 'id',
           order: 'desc',
@@ -124,7 +124,7 @@ const TableStories = () => {
                 padding: '50px',
               }}>
               <Table
-                activeData={store.state.activeData}
+                active={store.state.active}
                 columns={Resize(dummyProps)}
                 current={store.state.current}
                 pageSize={store.state.pageSize}
@@ -135,14 +135,14 @@ const TableStories = () => {
       ),
     )
     .add(
-      'no activeData',
+      'no active',
       withInfo(`Table Information`)(() => (
         <div
           style={{
             padding: '50px',
           }}>
           <Table
-            activeData={[]}
+            active={[]}
             columns={Default(dummyProps)}
             current={1}
             pageSize={10}
@@ -150,14 +150,14 @@ const TableStories = () => {
         </div>
       )),
     )
-    .add('no activeData (custom)',withInfo(`Table Information`)(() => (
+    .add('no active (custom)',withInfo(`Table Information`)(() => (
       <div
         style={{
           padding: '50px',
         }}>
         <Table
           noDataMessage="Data does not exist"
-          activeData={[]}
+          active={[]}
           columns={Default(dummyProps)}
           current={1}
           pageSize={10}
@@ -167,7 +167,7 @@ const TableStories = () => {
     )
     .add(
       'pagination (position default)',
-      withState({activeData: dummyData, current: 1, pageSize: 10})(
+      withState({active: dummyData, current: 1, pageSize: 10})(
         withInfo(`Table Information`)(
         ({store}) => {
           return (
@@ -176,7 +176,7 @@ const TableStories = () => {
                 padding: '50px',
               }}>
               <Table
-                activeData={store.state.activeData}
+                active={store.state.active}
                 columns={Default(dummyProps)}
                 showPagination
                 total={dummyData.length}
@@ -189,7 +189,7 @@ const TableStories = () => {
                     current,
                     store.state.pageSize,
                   );
-                  store.set({activeData: nextActiveData});
+                  store.set({active: nextActiveData});
                 }}
               />
             </div>
@@ -199,7 +199,7 @@ const TableStories = () => {
     ))
     .add(
       'pagination (position center)',
-      withState({activeData: dummyData, current: 1, pageSize: 10})(
+      withState({active: dummyData, current: 1, pageSize: 10})(
         withInfo(`Table Information`)(
         ({store}) => {
           return (
@@ -208,7 +208,7 @@ const TableStories = () => {
                 padding: '50px',
               }}>
               <Table
-                activeData={store.state.activeData}
+                active={store.state.active}
                 columns={Default(dummyProps)}
                 showPagination
                 total={dummyData.length}
@@ -221,7 +221,7 @@ const TableStories = () => {
                     current,
                     store.state.pageSize,
                   );
-                  store.set({activeData: nextActiveData});
+                  store.set({active: nextActiveData});
                 }}
                 paginationPosition="center"
               />
@@ -232,7 +232,7 @@ const TableStories = () => {
     ))
     .add(
       'pagination (scroll top)',
-      withState({activeData: dummyData, current: 1, pageSize: 10})(
+      withState({active: dummyData, current: 1, pageSize: 10})(
         withInfo(`Table Information`)(
         ({store}) => {
           return (
@@ -241,7 +241,7 @@ const TableStories = () => {
                 padding: '50px',
               }}>
               <Table
-                activeData={store.state.activeData}
+                active={store.state.active}
                 columns={Default(dummyProps)}
                 showPagination
                 total={dummyData.length}
@@ -254,7 +254,7 @@ const TableStories = () => {
                     current,
                     store.state.pageSize,
                   );
-                  store.set({activeData: nextActiveData});
+                  store.set({active: nextActiveData});
                 }}
                 scrollTop
               />

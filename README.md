@@ -34,7 +34,7 @@ yarn add @gemcook/table
 
 ### Local Pagination
 
-#### Use 'makeLocalActiveData' to generate activeData.
+#### Use 'makeLocalActiveData' to generate active.
 
 ```js
 ```
@@ -52,21 +52,22 @@ yarn add @gemcook/table
 
 | **Parameter**      | **Type**                                    | **Required** | **Default**           | **Description**    |
 | :----------------- | :------------------------------------------ | :----------- | :-------------------- | :----------------- |
-| activeData         | [any]                                       | true         | undefined             | \-                 |
-| columns            | ReactElement                                | true         | undefined             | \-                 |
-| pageSize           | number                                      | true         | undefined             | \-                 |
-| current            | number                                      | true         | undefined             | \-                 |
-| total              | number                                      | true         | undefined             | \-                 |
+| active         | [any]                                       | true         | undefined             |       Data displayed in the table           |
+| columns            | ReactElement                                | true         | undefined             | Table columns                 |
+| pageSize           | number                                      | true         | undefined             | Number of rows in table                 |
+| current            | number                                      | true         | undefined             | Current page number                 |
+| total              | number                                      | true         | undefined             | Maximum number of data                 |
 | updateCurrent      | (current: number) => void                   | true         | undefined             | \-                 |
 | updatePageSize     | (current: number, pageSize: number) => void | false        | undefined             | \-                 |
 | updateSortState    | (sortState: object) => void                 | flase        | undefined             | \-                 |
 | sortState          | {key: string, order: enum}                  | false        | undefined             | Enum: `asc` `desc` |
 | noDataMessage      | string                                      | false        | 'Data does not exist' | \-                 |
-| outline            | boolean                                     | false        | true                  | \-                 |
-| showPagination     | boolean                                     | false        | false                 | \-                 |
-| paginationPosition | string                                      | false        | right                 | \-                 |
+| outline            | boolean                                     | false        | true                  | Whether to display the outer frame                 |
+| showPagination     | boolean                                     | false        | false                 | Whether to display pagination-                 |
+| paginationPosition | string                                      | false        | right                 | Position of placement of pagination                 |
 | showSizeChanger    | boolean                                     | false        | false                 | \-                 |
 | scrollTop          | boolean                                     | false        | false                 | \-                 |
+| loading          | boolean                                     | false (Required for remote pagination)        | false                  |                  |
 
 ### API
 

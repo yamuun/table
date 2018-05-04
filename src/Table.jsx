@@ -12,7 +12,7 @@ import 'react-table/react-table.css';
 
 function Table(props: TableProps) {
   const {
-    activeData = [],
+    active = [],
     columns = [],
     loading,
     sortState,
@@ -39,7 +39,7 @@ function Table(props: TableProps) {
           outline: outline === true || outline === undefined,
         })}>
         <ReactTable
-          data={activeData}
+          data={active}
           columns={columns}
           pageSize={pageSize}
           showPaginationBottom={false}
@@ -49,7 +49,7 @@ function Table(props: TableProps) {
             return (
               <Column
                 {...e}
-                activeData={activeData}
+                active={active}
                 columns={columns}
                 sortState={sortState}
                 updateSortState={updateSortState}

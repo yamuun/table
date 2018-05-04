@@ -5,7 +5,7 @@
 
 // Table Stateless Component
 declare type TableProps = {
-  activeData: [] | Array<*>,
+  active: [] | Array<*>,
   columns:
     | [
         {
