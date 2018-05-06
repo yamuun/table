@@ -251,6 +251,28 @@ const TableStories = () => {
         },
       ),
     ))
+    .add(
+      'disabled pagination',
+      withState({active: dummyData, current: 1, pageSize: 10})(
+        withInfo(`Table Information`)(
+        ({store}) => {
+          return (
+            <div
+              style={{
+                padding: '50px',
+              }}>
+              <Table
+                active={store.state.active}
+                columns={Default(dummyProps)}
+                totalCount={dummyData.length}
+                current={store.state.current}
+                disabled={true}
+              />
+            </div>
+          );
+        },
+      ),
+    ))
 };
 
 export default TableStories;

@@ -62,7 +62,7 @@ yarn add @gemcook/table
 | totalPages         | number                                      | true                                   | undefined             | Maximum number of pages (use pagination) |
 | updateCurrent      | (current: number) => void                   | true                                   | undefined             | \-                                       |
 | loading            | boolean                                     | false (Required for remote pagination) | false                 | \-                                       |
-| disabledPagination | boolean                                     | false (Required for remote pagination) | false                 | \-                                       |
+| disabled           | boolean                                     | false (Required for remote pagination) | false                 | Set 'pagination' to disabled             |
 | sortState          | {key: string, order: enum}                  | false                                  | undefined             | Enum: `asc` `desc`                       |
 | updateSortState    | (sortState: object) => void                 | flase                                  | undefined             | \-                                       |
 | pageSize           | number                                      | false                                  | 10                    | Number of rows in table                  |

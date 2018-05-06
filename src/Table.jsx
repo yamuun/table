@@ -29,7 +29,7 @@ function Table(props: TableProps) {
     pageSize,
     showSizeChanger,
     updatePageSize,
-    disabledPagination,
+    disabled,
     scrollTop,
   } = props;
 
@@ -88,7 +88,7 @@ function Table(props: TableProps) {
           changePage={(current: number) => {
             updateCurrent(current);
           }}
-          disabled={disabledPagination}
+          disabled={disabled}
           showSizeChanger={showSizeChanger}
           changePageSize={(current: number, pageSize: number) => {
             updatePageSize(current, pageSize);

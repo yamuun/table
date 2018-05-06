@@ -12,7 +12,7 @@ type Props = {
   totalCount: number,
   active: [Object],
   updateRemotePagination: any => void,
-  disabledPagination: boolean,
+  disabled: boolean,
 };
 
 function Default(props: Props) {
@@ -23,7 +23,7 @@ function Default(props: Props) {
     totalCount,
     active,
     updateRemotePagination,
-    disabledPagination,
+    disabled,
   } = props;
 
   return (
@@ -38,7 +38,7 @@ function Default(props: Props) {
         loading={loading}
         current={current}
         updateCurrent={updateRemotePagination}
-        disabledPagination={disabledPagination}
+        disabled={disabled}
       />
     </div>
   );
