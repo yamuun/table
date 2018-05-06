@@ -9,7 +9,7 @@ type Props = {
   loading: boolean,
   current: number,
   pageSize: number,
-  total: number,
+  totalCount: number,
   active: [Object],
   updateRemotePagination: any => void,
   disabledPagination: boolean,
@@ -20,7 +20,7 @@ function Default(props: Props) {
     current,
     pageSize,
     loading,
-    total,
+    totalCount,
     active,
     updateRemotePagination,
     disabledPagination,
@@ -34,11 +34,9 @@ function Default(props: Props) {
       <Table
         active={active}
         columns={TableColumns(dummyProps)}
-        showPagination
-        total={total}
+        totalCount={totalCount}
         loading={loading}
         current={current}
-        pageSize={pageSize}
         updateCurrent={updateRemotePagination}
         disabledPagination={disabledPagination}
       />

@@ -8,14 +8,14 @@ import {
   type HOC,
 } from 'recompose';
 import {getFruits} from './../../api';
-import {makeRemotePagination} from '@gemcook/pagination';
+import {makeRemoteActive} from '@gemcook/pagination';
 
 const enhance: HOC<*, *> = compose(
   setDisplayName('RemoteDataStories'),
   withState('current', 'updateCurrent', 1),
   withState('pageSize', 'updatePageSize', 10),
   withState('loading', 'updateLoading', true),
-  withState('total', 'updateTotal', 0),
+  withState('totalCount', 'updateTotalCount', 0),
   withState('pagesCount', 'updatePagesCount', 0),
   withState('disabledPagination', 'updateDisabledPagination', false),
   withState('active', 'updateActive', []),
@@ -59,7 +59,7 @@ const enhance: HOC<*, *> = compose(
       updateCurrent(nextCurrent);
       updateDisabledPagination(true);
 
-      makeRemotePagination(
+      makeRemoteActive(
         pages,
         nextCurrent,
         current,
@@ -89,7 +89,7 @@ const enhance: HOC<*, *> = compose(
         updateBeforeNear,
         updateAfterNear,
         updateAfterDistant,
-        updateTotal,
+        updateTotalCount,
         updatePagesCount,
         current,
       } = this.props;
@@ -97,7 +97,7 @@ const enhance: HOC<*, *> = compose(
       try {
         const fruits = await getFruits(current);
 
-        updateTotal(fruits.totalCount);
+        updateTotalCount(fruits.totalCount);
         updatePagesCount(fruits.pagesCount);
 
         updateActive(fruits.pages.active);

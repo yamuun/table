@@ -34,7 +34,7 @@ yarn add @gemcook/table
 
 ### Local Pagination
 
-#### Use 'makeLocalActiveData' to generate active.
+#### Use 'makeLocalActive' to generate active.
 
 ```js
 ```
@@ -50,24 +50,29 @@ yarn add @gemcook/table
 
 ### Props
 
-| **Parameter**      | **Type**                                    | **Required** | **Default**           | **Description**    |
-| :----------------- | :------------------------------------------ | :----------- | :-------------------- | :----------------- |
-| active         | [any]                                       | true         | undefined             |       Data displayed in the table           |
-| columns            | ReactElement                                | true         | undefined             | Table columns                 |
-| pageSize           | number                                      | true         | undefined             | Number of rows in table                 |
-| current            | number                                      | true         | undefined             | Current page number                 |
-| total              | number                                      | true         | undefined             | Maximum number of data                 |
-| updateCurrent      | (current: number) => void                   | true         | undefined             | \-                 |
-| updatePageSize     | (current: number, pageSize: number) => void | false        | undefined             | \-                 |
-| updateSortState    | (sortState: object) => void                 | flase        | undefined             | \-                 |
-| sortState          | {key: string, order: enum}                  | false        | undefined             | Enum: `asc` `desc` |
-| noDataMessage      | string                                      | false        | 'Data does not exist' | \-                 |
-| outline            | boolean                                     | false        | true                  | Whether to display the outer frame                 |
-| showPagination     | boolean                                     | false        | false                 | Whether to display pagination-                 |
-| paginationPosition | string                                      | false        | right                 | Position of placement of pagination                 |
-| showSizeChanger    | boolean                                     | false        | false                 | \-                 |
-| scrollTop          | boolean                                     | false        | false                 | \-                 |
-| loading          | boolean                                     | false (Required for remote pagination)        | false                  |                  |
+* There are six required items
+* For Remote Pagination, there are 8 required items
+
+| **Parameter**      | **Type**                                    | **Required**                           | **Default**           | **Description**                          |
+| :----------------- | :------------------------------------------ | :------------------------------------- | :-------------------- | :--------------------------------------- |
+| active             | [any]                                       | true                                   | undefined             | Data displayed in the table              |
+| columns            | ReactElement                                | true                                   | undefined             | Table columns                            |
+| current            | number                                      | true                                   | undefined             | Current page number                      |
+| totalCount         | number                                      | true                                   | undefined             | Maximum number of all data               |
+| totalPages         | number                                      | true                                   | undefined             | Maximum number of pages (use pagination) |
+| updateCurrent      | (current: number) => void                   | true                                   | undefined             | \-                                       |
+| loading            | boolean                                     | false (Required for remote pagination) | false                 | \-                                       |
+| disabledPagination | boolean                                     | false (Required for remote pagination) | false                 | \-                                       |
+| sortState          | {key: string, order: enum}                  | false                                  | undefined             | Enum: `asc` `desc`                       |
+| updateSortState    | (sortState: object) => void                 | flase                                  | undefined             | \-                                       |
+| pageSize           | number                                      | false                                  | 10                    | Number of rows in table                  |
+| updatePageSize     | (current: number, pageSize: number) => void | false                                  | undefined             | \-                                       |
+| noDataMessage      | string                                      | false                                  | 'Data does not exist' | \-                                       |
+| outline            | boolean                                     | false                                  | true                  | Whether to display the outer frame       |
+| showPagination     | boolean                                     | false                                  | true                  | Whether to display pagination-           |
+| paginationPosition | string                                      | false                                  | right                 | Position of placement of pagination      |
+| showSizeChanger    | boolean                                     | false                                  | false                 | \-                                       |
+| scrollTop          | boolean                                     | false                                  | false                 | \-                                       |
 
 ### API
 

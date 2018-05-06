@@ -10,6 +10,8 @@ import enhance from './enhancer';
 
 import 'react-table/react-table.css';
 
+const defaultPageSize = 10;
+
 function Table(props: TableProps) {
   const {
     active = [],
@@ -21,14 +23,14 @@ function Table(props: TableProps) {
     outline,
     current,
     showPagination,
-    total,
+    totalCount,
     updateCurrent,
     paginationPosition,
     pageSize,
     showSizeChanger,
     updatePageSize,
     disabledPagination,
-    scrollTop
+    scrollTop,
   } = props;
 
   return (
@@ -41,7 +43,7 @@ function Table(props: TableProps) {
         <ReactTable
           data={active}
           columns={columns}
-          pageSize={pageSize}
+          pageSize={pageSize || defaultPageSize}
           showPaginationBottom={false}
           className="-striped -highlight"
           loading={loading}
@@ -75,14 +77,14 @@ function Table(props: TableProps) {
       <div
         className={classNames({
           b__pagination: true,
-          hidden: showPagination === false || showPagination === undefined,
+          hidden: showPagination === false ,
           left: paginationPosition === 'left',
           center: paginationPosition === 'center',
         })}>
         <Pagination
-          total={total}
+          totalCount={totalCount}
           current={current}
-          pageSize={pageSize}
+          pageSize={pageSize || defaultPageSize}
           changePage={(current: number) => {
             updateCurrent(current);
           }}

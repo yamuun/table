@@ -4,7 +4,7 @@ import {storiesOf} from '@storybook/react';
 import {withInfo} from '@storybook/addon-info';
 import {withState} from '@dump247/storybook-state';
 import {Table} from '../../src';
-import {makeLocalActiveData} from '@gemcook/pagination';
+import {makeLocalActive} from '@gemcook/pagination';
 import {dummyData, dummyProps} from './dummy';
 import {Default, Sort, Resize} from '../components/TableColumns';
 
@@ -21,9 +21,9 @@ const TableStories = () => {
               }}>
               <Table
                 active={store.state.active}
+                totalCount={store.state.active.length}
                 columns={Default(dummyProps)}
                 current={store.state.current}
-                pageSize={store.state.pageSize}
               />
             </div>
           );
@@ -41,10 +41,31 @@ const TableStories = () => {
               }}>
               <Table
                 active={store.state.active}
+                totalCount={store.state.active.length}
                 columns={Default(dummyProps)}
                 current={store.state.current}
-                pageSize={store.state.pageSize}
                 outline={false}
+              />
+            </div>
+          );
+        }),
+      ),
+    )
+    .add(
+      'hidden pagination',
+      withState({active: dummyData, current: 1, pageSize: 10})(
+        withInfo(`Table Information`)(({store}) => {
+          return (
+            <div
+              style={{
+                padding: '50px',
+              }}>
+              <Table
+                active={store.state.active}
+                totalCount={store.state.active.length}
+                columns={Default(dummyProps)}
+                current={store.state.current}
+                showPagination={false}                
               />
             </div>
           );
@@ -65,7 +86,7 @@ const TableStories = () => {
                 active={store.state.active}
                 columns={Default(dummyProps)}
                 current={store.state.current}
-                pageSize={store.state.pageSize}
+                totalCount={store.state.active.length}
               />
             </div>
           );
@@ -93,7 +114,7 @@ const TableStories = () => {
                 active={store.state.active}
                 columns={Sort(dummyProps)}
                 current={store.state.current}
-                pageSize={store.state.pageSize}
+                totalCount={store.state.active.length}
                 sortState={store.state.sortState}
                 updateSortState={sortState => {
                   store.set({
@@ -127,7 +148,7 @@ const TableStories = () => {
                 active={store.state.active}
                 columns={Resize(dummyProps)}
                 current={store.state.current}
-                pageSize={store.state.pageSize}
+                totalCount={store.state.active.length}
               />
             </div>
           );
@@ -145,12 +166,13 @@ const TableStories = () => {
             active={[]}
             columns={Default(dummyProps)}
             current={1}
-            pageSize={10}
+            totalCount={0}
           />
         </div>
       )),
     )
-    .add('no active (custom)',withInfo(`Table Information`)(() => (
+    .add('no active (custom)', 
+      withInfo(`Table Information`)(() => (
       <div
         style={{
           padding: '50px',
@@ -158,9 +180,8 @@ const TableStories = () => {
         <Table
           noDataMessage="Data does not exist"
           active={[]}
+          totalCount={0}
           columns={Default(dummyProps)}
-          current={1}
-          pageSize={10}
         />
       </div>
     )),
@@ -178,19 +199,8 @@ const TableStories = () => {
               <Table
                 active={store.state.active}
                 columns={Default(dummyProps)}
-                showPagination
-                total={dummyData.length}
-                current={store.state.current}
+                totalCount={dummyData.length}
                 pageSize={store.state.pageSize}
-                updateCurrent={(current: number) => {
-                  store.set({current});
-                  const nextActiveData = makeLocalActiveData(
-                    dummyData,
-                    current,
-                    store.state.pageSize,
-                  );
-                  store.set({active: nextActiveData});
-                }}
               />
             </div>
           );
@@ -210,19 +220,8 @@ const TableStories = () => {
               <Table
                 active={store.state.active}
                 columns={Default(dummyProps)}
-                showPagination
-                total={dummyData.length}
+                totalCount={dummyData.length}
                 current={store.state.current}
-                pageSize={store.state.pageSize}
-                updateCurrent={(current: number) => {
-                  store.set({current});
-                  const nextActiveData = makeLocalActiveData(
-                    dummyData,
-                    current,
-                    store.state.pageSize,
-                  );
-                  store.set({active: nextActiveData});
-                }}
                 paginationPosition="center"
               />
             </div>
@@ -231,7 +230,7 @@ const TableStories = () => {
       ),
     ))
     .add(
-      'pagination (scroll top)',
+      'pagination (position left)',
       withState({active: dummyData, current: 1, pageSize: 10})(
         withInfo(`Table Information`)(
         ({store}) => {
@@ -243,20 +242,9 @@ const TableStories = () => {
               <Table
                 active={store.state.active}
                 columns={Default(dummyProps)}
-                showPagination
-                total={dummyData.length}
+                totalCount={dummyData.length}
                 current={store.state.current}
-                pageSize={store.state.pageSize}
-                updateCurrent={(current: number) => {
-                  store.set({current});
-                  const nextActiveData = makeLocalActiveData(
-                    dummyData,
-                    current,
-                    store.state.pageSize,
-                  );
-                  store.set({active: nextActiveData});
-                }}
-                scrollTop
+                paginationPosition="left"
               />
             </div>
           );
