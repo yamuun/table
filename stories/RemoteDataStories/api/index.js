@@ -1,2 +1,2 @@
 /* @flow */
-export {default as getFruits} from './fruits/getFruits';
+export {default as fruitsApi} from './fruits';

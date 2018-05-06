@@ -7,7 +7,7 @@ import {
   withState,
   type HOC,
 } from 'recompose';
-import {getFruits} from './../../api';
+import {fruitsApi} from './../../api';
 import {makeRemoteActive} from '@gemcook/pagination';
 
 const enhance: HOC<*, *> = compose(
@@ -16,8 +16,8 @@ const enhance: HOC<*, *> = compose(
   withState('pageSize', 'updatePageSize', 10),
   withState('loading', 'updateLoading', true),
   withState('totalCount', 'updateTotalCount', 0),
-  withState('pagesCount', 'updatePagesCount', 0),
-  withState('disabledPagination', 'updateDisabledPagination', false),
+  withState('totalPages', 'updateTotalPages', 0),
+  withState('disabled', 'updateDisabled', false),
   withState('active', 'updateActive', []),
   withState('first', 'updateFirst', []),
   withState('last', 'updateLast', []),
@@ -37,13 +37,13 @@ const enhance: HOC<*, *> = compose(
         afterDistant,
         current,
         updateCurrent,
-        pagesCount,
+        totalPages,
         updateActive,
         updateBeforeDistant,
         updateBeforeNear,
         updateAfterNear,
         updateAfterDistant,
-        updateDisabledPagination,
+        updateDisabled,
       } = props;
 
       const pages = {
@@ -57,25 +57,24 @@ const enhance: HOC<*, *> = compose(
       };
 
       updateCurrent(nextCurrent);
-      updateDisabledPagination(true);
+      updateDisabled(true);
 
-      makeRemoteActive(
+      const nextActive = makeRemoteActive(
         pages,
-        nextCurrent,
         current,
-        pagesCount,
-        updateActive,
+        nextCurrent,
+        totalPages,
       );
+      updateActive(nextActive);
 
-      const fruits = await getFruits(nextCurrent);
+      const fruits = await fruitsApi.getFruits(nextCurrent);
 
-      updateActive(fruits.pages.active);
       updateBeforeDistant(fruits.pages.before_distant);
       updateBeforeNear(fruits.pages.before_near);
       updateAfterNear(fruits.pages.after_near);
       updateAfterDistant(fruits.pages.after_distant);
 
-      updateDisabledPagination(false);
+      updateDisabled(false);
     },
   }),
   lifecycle({
@@ -90,15 +89,15 @@ const enhance: HOC<*, *> = compose(
         updateAfterNear,
         updateAfterDistant,
         updateTotalCount,
-        updatePagesCount,
+        updateTotalPages,
         current,
       } = this.props;
 
       try {
-        const fruits = await getFruits(current);
+        const fruits = await fruitsApi.getFruits(current);
 
         updateTotalCount(fruits.totalCount);
-        updatePagesCount(fruits.pagesCount);
+        updateTotalPages(fruits.totalPages);
 
         updateActive(fruits.pages.active);
         updateFirst(fruits.pages.first);
@@ -110,7 +109,7 @@ const enhance: HOC<*, *> = compose(
         updateLoading(false);
       } catch (e) {
         updateLoading(false);
-        console.log(e);
+        console.error(e);
       }
     },
   }),
