@@ -77,7 +77,7 @@ function Table(props: TableProps) {
       <div
         className={classNames({
           b__pagination: true,
-          hidden: showPagination === false ,
+          hidden: showPagination === false,
           left: paginationPosition === 'left',
           center: paginationPosition === 'center',
         })}>
