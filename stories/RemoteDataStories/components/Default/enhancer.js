@@ -16,7 +16,7 @@ const enhance: HOC<*, *> = compose(
   withState('pageSize', 'updatePageSize', 10),
   withState('loading', 'updateLoading', true),
   withState('totalCount', 'updateTotalCount', 0),
-  withState('pagesCount', 'updatePagesCount', 0),
+  withState('totalPages', 'updateTotalPages', 0),
   withState('disabledPagination', 'updateDisabledPagination', false),
   withState('active', 'updateActive', []),
   withState('first', 'updateFirst', []),
@@ -37,7 +37,7 @@ const enhance: HOC<*, *> = compose(
         afterDistant,
         current,
         updateCurrent,
-        pagesCount,
+        totalPages,
         updateActive,
         updateBeforeDistant,
         updateBeforeNear,
@@ -59,17 +59,16 @@ const enhance: HOC<*, *> = compose(
       updateCurrent(nextCurrent);
       updateDisabledPagination(true);
 
-      makeRemoteActive(
+      const nextActive = makeRemoteActive(
         pages,
-        nextCurrent,
         current,
-        pagesCount,
-        updateActive,
+        nextCurrent,
+        totalPages,
       );
+      updateActive(nextActive);
 
       const fruits = await getFruits(nextCurrent);
 
-      updateActive(fruits.pages.active);
       updateBeforeDistant(fruits.pages.before_distant);
       updateBeforeNear(fruits.pages.before_near);
       updateAfterNear(fruits.pages.after_near);
@@ -90,7 +89,7 @@ const enhance: HOC<*, *> = compose(
         updateAfterNear,
         updateAfterDistant,
         updateTotalCount,
-        updatePagesCount,
+        updateTotalPages,
         current,
       } = this.props;
 
@@ -98,7 +97,7 @@ const enhance: HOC<*, *> = compose(
         const fruits = await getFruits(current);
 
         updateTotalCount(fruits.totalCount);
-        updatePagesCount(fruits.pagesCount);
+        updateTotalPages(fruits.totalPages);
 
         updateActive(fruits.pages.active);
         updateFirst(fruits.pages.first);
