@@ -65,7 +65,7 @@ const TableStories = () => {
                 totalCount={store.state.active.length}
                 columns={Default(dummyProps)}
                 current={store.state.current}
-                showPagination={false}                
+                showPagination={false}
               />
             </div>
           );
@@ -171,26 +171,26 @@ const TableStories = () => {
         </div>
       )),
     )
-    .add('no active (custom)', 
+    .add(
+      'no active (custom)',
       withInfo(`Table Information`)(() => (
-      <div
-        style={{
-          padding: '50px',
-        }}>
-        <Table
-          noDataMessage="Data does not exist"
-          active={[]}
-          totalCount={0}
-          columns={Default(dummyProps)}
-        />
-      </div>
-    )),
+        <div
+          style={{
+            padding: '50px',
+          }}>
+          <Table
+            noDataMessage="Data does not exist"
+            active={[]}
+            totalCount={0}
+            columns={Default(dummyProps)}
+          />
+        </div>
+      )),
     )
     .add(
       'pagination (position default)',
       withState({active: dummyData, current: 1, pageSize: 10})(
-        withInfo(`Table Information`)(
-        ({store}) => {
+        withInfo(`Table Information`)(({store}) => {
           return (
             <div
               style={{
@@ -204,14 +204,13 @@ const TableStories = () => {
               />
             </div>
           );
-        },
+        }),
       ),
-    ))
+    )
     .add(
       'pagination (position center)',
       withState({active: dummyData, current: 1, pageSize: 10})(
-        withInfo(`Table Information`)(
-        ({store}) => {
+        withInfo(`Table Information`)(({store}) => {
           return (
             <div
               style={{
@@ -226,14 +225,13 @@ const TableStories = () => {
               />
             </div>
           );
-        },
+        }),
       ),
-    ))
+    )
     .add(
       'pagination (position left)',
       withState({active: dummyData, current: 1, pageSize: 10})(
-        withInfo(`Table Information`)(
-        ({store}) => {
+        withInfo(`Table Information`)(({store}) => {
           return (
             <div
               style={{
@@ -248,14 +246,13 @@ const TableStories = () => {
               />
             </div>
           );
-        },
+        }),
       ),
-    ))
+    )
     .add(
       'disabled pagination',
       withState({active: dummyData, current: 1, pageSize: 10})(
-        withInfo(`Table Information`)(
-        ({store}) => {
+        withInfo(`Table Information`)(({store}) => {
           return (
             <div
               style={{
@@ -270,9 +267,9 @@ const TableStories = () => {
               />
             </div>
           );
-        },
+        }),
       ),
-    ))
+    );
 };
 
 export default TableStories;

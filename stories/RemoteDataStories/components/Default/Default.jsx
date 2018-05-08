@@ -18,7 +18,6 @@ type Props = {
 function Default(props: Props) {
   const {
     current,
-    pageSize,
     loading,
     totalCount,
     active,

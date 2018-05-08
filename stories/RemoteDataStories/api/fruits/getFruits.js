@@ -1,13 +1,12 @@
 /* @flow */
-import type {Fruit} from './responseType';
 import {FailedRecord} from './../commonParameter';
 import {isHttpStatusOK} from './../utils';
 
 const url = 'https://api.gemcook.com';
 const version = '/v1';
 
-async function getFruits(page: number): Promise<Fruit> {
-  const response = await fetch(`${url}${version}/paging?page=${page}`, {
+async function getFruits(current: number) {
+  const response = await fetch(`${url}${version}/paging?page=${current}`, {
     method: 'GET',
   });
 
@@ -15,7 +14,7 @@ async function getFruits(page: number): Promise<Fruit> {
 
   const count = {
     totalCount: Number(response.headers.get('x-total-count')),
-    pagesCount: Number(response.headers.get('x-total-pages')),
+    totalPages: Number(response.headers.get('x-total-pages')),
   };
 
   if (isHttpStatusOK(response.status)) {
