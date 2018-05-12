@@ -1,6 +1,6 @@
 {
   "name": "@gemcook/table",
-  "version": "1.4.10",
+  "version": "1.5.0",
   "main": "lib/index.umd.js",
   "repository": "https://github.com/gemcook/table.git",
   "author": "Gemcook, Inc.",
@@ -99,7 +99,7 @@
   },
   "dependencies": {
     "@dump247/storybook-state": "^1.4.0",
-    "@gemcook/pagination": "^1.3.1",
+    "@gemcook/pagination": "^1.4.0",
     "classnames": "2.2.5",
     "immutable": "^3.8.2",
     "prop-types": "15.6.1",
