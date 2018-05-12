@@ -26,40 +26,50 @@ export default function Column(props: ColumnProps) {
         <div
           className={classNames({
             'rt-th': true,
-            '-cursor-pointer': true,
             'rt-resizable-header': resizable,
           })}
-          role="button"
-          tabIndex={0}
           style={style}
-          onClick={() => {
-            const duplicateSortKey = sortState.key === sortKey;
-
-            updateSortState({
-              key: sortKey,
-              order:
-                sortState.order === 'asc' && duplicateSortKey ? 'desc' : 'asc',
-            });
-          }}>
+        >
           <div className={children[0].props.style}>
-            {children[0].props.children}
-            <span className={classNames({b__sort: true, hidden: !sortable})}>
-              <Icon
-                name="triangle up"
-                size="small"
+            <span
+              role="button"
+              tabIndex="0"
+              className="b__sort"
+              onClick={() => {
+                const duplicateSortKey = sortState.key === sortKey;
+
+                updateSortState({
+                  key: sortKey,
+                  order:
+                    sortState.order === 'asc' && duplicateSortKey
+                      ? 'desc'
+                      : 'asc',
+                });
+              }}
+            >
+              {children[0].props.children}
+              <span
                 className={classNames({
-                  sortKey: sortState.key === sortKey,
-                  asc: 'asc' === sortState.order,
+                  hidden: !sortable,
                 })}
-              />
-              <Icon
-                name="triangle down"
-                size="small"
-                className={classNames({
-                  sortKey: sortState.key === sortKey,
-                  desc: 'desc' === sortState.order,
-                })}
-              />
+              >
+                <Icon
+                  name="triangle up"
+                  size="small"
+                  className={classNames({
+                    sortKey: sortState.key === sortKey,
+                    asc: 'asc' === sortState.order,
+                  })}
+                />
+                <Icon
+                  name="triangle down"
+                  size="small"
+                  className={classNames({
+                    sortKey: sortState.key === sortKey,
+                    desc: 'desc' === sortState.order,
+                  })}
+                />
+              </span>
             </span>
           </div>
           {resizable ? (
@@ -76,7 +86,8 @@ export default function Column(props: ColumnProps) {
             'rt-th': true,
             'rt-resizable-header': resizable,
           })}
-          style={style}>
+          style={style}
+        >
           <div className={children[0].props.style}>
             {children[0].props.children}
           </div>
