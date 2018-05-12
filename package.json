@@ -1,6 +1,6 @@
 {
   "name": "@gemcook/table",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "main": "lib/index.umd.js",
   "repository": "https://github.com/gemcook/table.git",
   "author": "Gemcook, Inc.",
