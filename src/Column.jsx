@@ -33,9 +33,12 @@ export default function Column(props: ColumnProps) {
           tabIndex={0}
           style={style}
           onClick={() => {
+            const duplicateSortKey = sortState.key === sortKey;
+
             updateSortState({
               key: sortKey,
-              order: sortState.order === 'asc' ? 'desc' : 'asc',
+              order:
+                sortState.order === 'asc' && duplicateSortKey ? 'desc' : 'asc',
             });
           }}>
           <div className={children[0].props.style}>
