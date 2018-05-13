@@ -1,0 +1,20 @@
+/* ”flow */
+export type Props = {
+  style: {},
+  className: string,
+  children: [
+    {
+      props: {
+        style: {},
+        children: string,
+      },
+    },
+    any,
+  ],
+  sortState: {
+    key: string,
+    order: string,
+  },
+  updateSortState: ({}) => void,
+  columns: [],
+};
