@@ -74,6 +74,18 @@ yarn add @gemcook/table
 | showSizeChanger    | boolean                                     | false                                  | false                 | \-                                       |
 | scrollTop          | boolean                                     | false                                  | false                 | \-                                       |
 
+### Override Styles
+
+```scss
+$table-main-color: #fa6681 !default;
+$table-bg-color: white !default;
+$table-sort-default-color: #808b97 !default;
+$table-thead-border-color: #e9ecef !default;
+$table-th-text-color: #7d7d7d !default;
+$table-td-text-color: #7d7d7d !default;
+$table-nodata-text-color: #404b69 !default;
+```
+
 ### API
 
 #### pagination integration
