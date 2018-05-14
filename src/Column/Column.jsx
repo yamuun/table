@@ -2,8 +2,9 @@
 import React from 'react';
 import {Icon} from 'semantic-ui-react';
 import classNames from 'classnames';
+import type {Props} from './type';
 
-export default function Column(props: ColumnProps) {
+export default function Column(props: Props) {
   const {
     style,
     className,

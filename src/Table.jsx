@@ -1,18 +1,19 @@
 /* @flow */
 import React from 'react';
 import ReactTable from 'react-table';
-import NoData from './NoData';
-import Loading from './Loading';
-import Column from './Column';
+import {NoData} from './NoData';
+import {Loading} from './Loading';
+import {Column} from './Column';
 import classNames from 'classnames';
 import {Pagination} from '@gemcook/pagination';
 import enhance from './enhancer';
+import type {Props} from './type';
 
 import 'react-table/react-table.css';
 
 const defaultPageSize = 10;
 
-function Table(props: TableProps) {
+function Table(props: Props) {
   const {
     active = [],
     columns = [],
