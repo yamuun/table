@@ -29,7 +29,7 @@ yarn add @gemcook/table
 #### Import `@gemcook/table/lib/styles/index.scss` to your SCSS.
 
 ```scss
-@import "~@gemcook/table/lib/styles/index";
+@import '~@gemcook/table/lib/styles/index';
 ```
 
 ### Local Pagination
@@ -78,6 +78,7 @@ yarn add @gemcook/table
 
 ```scss
 $table__main-color: #fa6681 !default;
+$table__link-color: #fa6681 !default;
 $table__bg-color: white !default;
 $table__sort-default-color: #808b97 !default;
 $table__thead-border-color: #e9ecef !default;
