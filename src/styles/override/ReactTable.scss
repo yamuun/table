@@ -1,6 +1,6 @@
 .ReactTable {
   background: {
-    color: $table-bg-color;
+    color: $table__bg-color;
   }
 
   border: none !important;
@@ -44,13 +44,13 @@
 
   .rt-tr {
     height: 70px;
-    border-bottom: 3px solid $table-thead-border-color;
+    border-bottom: 3px solid $table__thead-border-color;
 
     .rt-th {
       padding-top: 25px !important;
       padding-left: 25px !important;
       border: none !important;
-      color: $table-th-text-color;
+      color: $table__th-text-color;
       font-weight: bold;
     }
   }
@@ -78,15 +78,15 @@
             align-items: center;
             padding-left: 25px;
             border-right: none;
-            color: $table-td-text-color;
+            color: $table__td-text-color;
 
             a {
-              color: $table-main-color;
+              color: $table__main-color;
             }
           }
 
           &:hover {
-            background-color: rgba($table-main-color, 0.07) !important;
+            background-color: rgba($table__main-color, 0.07) !important;
           }
         }
 
@@ -96,15 +96,15 @@
             align-items: center;
             padding-left: 25px;
             border-right: none;
-            color: $table-td-text-color;
+            color: $table__td-text-color;
 
             a {
-              color: $table-main-color;
+              color: $table__main-color;
             }
           }
 
           &:hover {
-            background-color: rgba($table-main-color, 0.07) !important;
+            background-color: rgba($table__main-color, 0.07) !important;
           }
         }
       }

@@ -11,7 +11,7 @@
       height: 100%;
       align-items: center;
       justify-content: center;
-      color: $table-nodata-text-color;
+      color: $table__nodata-text-color;
       font-size: 12px;
       background: {
         color: rgba(white, 0.6);
@@ -45,20 +45,20 @@
         &.triangle.up {
           position: absolute;
           bottom: 30px;
-          color: $table-sort-default-color !important;
+          color: $table__sort-default-color !important;
 
           &.sortKey.asc {
-            color: $table-main-color !important;
+            color: $table__main-color !important;
           }
         }
 
         &.triangle.down {
           position: absolute;
           bottom: 25px;
-          color: $table-sort-default-color !important;
+          color: $table__sort-default-color !important;
 
           &.sortKey.desc {
-            color: $table-main-color !important;
+            color: $table__main-color !important;
           }
         }
       }
