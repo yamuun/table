@@ -2,7 +2,26 @@
 import React from 'react';
 import {Icon} from 'semantic-ui-react';
 import classNames from 'classnames';
-import type {Props} from './type';
+
+type Props = {
+  style: {},
+  className: string,
+  children: [
+    {
+      props: {
+        style: {},
+        children: string,
+      },
+    },
+    any,
+  ],
+  sortState: {
+    key: string,
+    order: string,
+  },
+  updateSortState: ({}) => void,
+  columns: [],
+};
 
 export default function Column(props: Props) {
   const {

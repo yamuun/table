@@ -7,9 +7,38 @@ import {Column} from './Column';
 import classNames from 'classnames';
 import {Pagination} from '@gemcook/pagination';
 import enhance from './enhancer';
-import type {Props} from './type';
 
 import 'react-table/react-table.css';
+
+type Props = {
+  active: [] | Array<*>,
+  columns:
+    | [
+        {
+          Header: string,
+          accessor: string,
+          resizable: boolean,
+          sortable: boolean,
+        },
+      ]
+    | Array<*>,
+  loading: boolean,
+  sortState: {},
+  updateSortState: () => void,
+  noDataMessage: string,
+  outline: boolean,
+  current: number,
+  updateCurrent: (current: number) => void,
+  pageSize: number,
+  showPagination: boolean,
+  paginationPosition: string,
+  showSizeChanger: boolean,
+  updatePageSize: (current: number, pageSize: number) => void,
+  pageSizeOptions: [string],
+  totalCount: number,
+  disabled: boolean,
+  scrollTop: boolean,
+};
 
 const defaultPageSize = 10;
 
@@ -40,7 +69,8 @@ function Table(props: Props) {
         className={classNames({
           b__table: true,
           outline: outline === true || outline === undefined,
-        })}>
+        })}
+      >
         <ReactTable
           data={active}
           columns={columns}
@@ -81,7 +111,8 @@ function Table(props: Props) {
           hidden: showPagination === false,
           left: paginationPosition === 'left',
           center: paginationPosition === 'center',
-        })}>
+        })}
+      >
         <Pagination
           totalCount={totalCount}
           current={current}

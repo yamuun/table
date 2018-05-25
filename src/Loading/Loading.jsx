@@ -1,7 +1,7 @@
 /* @flow */
 import React from 'react';
 import {Loader} from 'semantic-ui-react';
-import type {Props} from './type';
+type Props = {};
 
 export default function Loading(props: Props) {
   return (
