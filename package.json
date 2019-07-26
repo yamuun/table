@@ -1,11 +1,9 @@
 {
   "name": "@gemcook/table",
   "version": "1.6.0",
-  "main": "lib/cjs/index.cjs.js",
-  "module": "lib/es/index.es.js",
-  "sideEffects": false,
+  "main": "lib/index.js",
   "repository": "https://github.com/gemcook/table.git",
-  "author": "Gemcook, Inc.",
+  "author": "Gemcook Engineers <engineers@gemcook.com>",
   "license": "MIT",
   "files": [
     "lib",
@@ -25,7 +23,6 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@dump247/storybook-state": "^1.6.1",
     "@gemcook/pagination": "^1.18.2",
     "classnames": "^2.2.6",
     "immutable": "^4.0.0-rc.12",
@@ -43,6 +40,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
     "@babel/runtime-corejs3": "^7.5.5",
+    "@dump247/storybook-state": "^1.6.1",
     "@storybook/addon-info": "^5.1.9",
     "@storybook/react": "^5.1.9",
     "@types/amazon-cognito-auth-js": "^1.2.1",
