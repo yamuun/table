@@ -63,7 +63,7 @@ const enhance: HOC<*, *> = compose(
         pages,
         current,
         nextCurrent,
-        totalPages,
+        totalPages
       );
       updateActive(nextActive);
 
@@ -112,7 +112,7 @@ const enhance: HOC<*, *> = compose(
         console.error(e);
       }
     },
-  }),
+  })
 );
 
 export default enhance;

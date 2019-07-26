@@ -18,7 +18,8 @@ const TableStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 active={store.state.active}
                 totalCount={store.state.active.length}
@@ -27,8 +28,8 @@ const TableStories = () => {
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     )
     .add(
       'no outline',
@@ -38,7 +39,8 @@ const TableStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 active={store.state.active}
                 totalCount={store.state.active.length}
@@ -48,8 +50,8 @@ const TableStories = () => {
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     )
     .add(
       'hidden pagination',
@@ -59,7 +61,8 @@ const TableStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 active={store.state.active}
                 totalCount={store.state.active.length}
@@ -69,8 +72,8 @@ const TableStories = () => {
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     )
     .add(
       'loading',
@@ -80,7 +83,8 @@ const TableStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 loading={true}
                 active={store.state.active}
@@ -90,8 +94,8 @@ const TableStories = () => {
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     )
     .add(
       'sort (comoing soon...)',
@@ -109,7 +113,8 @@ const TableStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 active={store.state.active}
                 columns={Sort(dummyProps)}
@@ -124,8 +129,8 @@ const TableStories = () => {
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     )
     .add(
       'resize',
@@ -143,7 +148,8 @@ const TableStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 active={store.state.active}
                 columns={Resize(dummyProps)}
@@ -152,8 +158,8 @@ const TableStories = () => {
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     )
     .add(
       'no active',
@@ -161,7 +167,8 @@ const TableStories = () => {
         <div
           style={{
             padding: '50px',
-          }}>
+          }}
+        >
           <Table
             active={[]}
             columns={Default(dummyProps)}
@@ -169,7 +176,7 @@ const TableStories = () => {
             totalCount={0}
           />
         </div>
-      )),
+      ))
     )
     .add(
       'no active (custom)',
@@ -177,7 +184,8 @@ const TableStories = () => {
         <div
           style={{
             padding: '50px',
-          }}>
+          }}
+        >
           <Table
             noDataMessage="Data does not exist"
             active={[]}
@@ -185,7 +193,7 @@ const TableStories = () => {
             columns={Default(dummyProps)}
           />
         </div>
-      )),
+      ))
     )
     .add(
       'pagination (position default)',
@@ -195,7 +203,8 @@ const TableStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 active={store.state.active}
                 columns={Default(dummyProps)}
@@ -204,8 +213,8 @@ const TableStories = () => {
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     )
     .add(
       'pagination (position center)',
@@ -215,7 +224,8 @@ const TableStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 active={store.state.active}
                 columns={Default(dummyProps)}
@@ -225,8 +235,8 @@ const TableStories = () => {
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     )
     .add(
       'pagination (position left)',
@@ -236,7 +246,8 @@ const TableStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 active={store.state.active}
                 columns={Default(dummyProps)}
@@ -246,8 +257,8 @@ const TableStories = () => {
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     )
     .add(
       'disabled pagination',
@@ -257,7 +268,8 @@ const TableStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 active={store.state.active}
                 columns={Default(dummyProps)}
@@ -267,8 +279,8 @@ const TableStories = () => {
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     );
 };
 

@@ -19,7 +19,7 @@ type Props = {
           accessor: string,
           resizable: boolean,
           sortable: boolean,
-        },
+        }
       ]
     | Array<*>,
   loading: boolean,

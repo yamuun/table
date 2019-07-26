@@ -22,7 +22,8 @@ const LocalDataStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 active={store.state.active}
                 columns={Default(dummyProps)}
@@ -33,15 +34,15 @@ const LocalDataStories = () => {
                   const nextActiveData = makeLocalActive(
                     dummyData,
                     current,
-                    store.state.pageSize,
+                    store.state.pageSize
                   );
                   store.set({active: nextActiveData});
                 }}
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     )
     .add(
       'change page size',
@@ -55,7 +56,8 @@ const LocalDataStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 active={store.state.active}
                 columns={Default(dummyProps)}
@@ -67,7 +69,7 @@ const LocalDataStories = () => {
                   const nextActiveData = makeLocalActive(
                     dummyData,
                     current,
-                    store.state.pageSize,
+                    store.state.pageSize
                   );
                   store.set({active: nextActiveData});
                 }}
@@ -78,15 +80,15 @@ const LocalDataStories = () => {
                   const nextActiveData = makeLocalActive(
                     dummyData,
                     1,
-                    pageSize,
+                    pageSize
                   );
                   store.set({active: nextActiveData});
                 }}
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     )
     .add(
       'scroll top',
@@ -100,7 +102,8 @@ const LocalDataStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 active={store.state.active}
                 columns={Default(dummyProps)}
@@ -112,7 +115,7 @@ const LocalDataStories = () => {
                   const nextActiveData = makeLocalActive(
                     dummyData,
                     current,
-                    store.state.pageSize,
+                    store.state.pageSize
                   );
                   store.set({active: nextActiveData});
                 }}
@@ -124,15 +127,15 @@ const LocalDataStories = () => {
                   const nextActiveData = makeLocalActive(
                     dummyData,
                     1,
-                    pageSize,
+                    pageSize
                   );
                   store.set({active: nextActiveData});
                 }}
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     )
     .add(
       'sort(coming soon...)',
@@ -146,7 +149,8 @@ const LocalDataStories = () => {
             <div
               style={{
                 padding: '50px',
-              }}>
+              }}
+            >
               <Table
                 active={store.state.active}
                 columns={Default(dummyProps)}
@@ -159,7 +163,7 @@ const LocalDataStories = () => {
                   const nextActiveData = makeLocalActive(
                     dummyData,
                     current,
-                    store.state.pageSize,
+                    store.state.pageSize
                   );
                   store.set({active: nextActiveData});
                 }}
@@ -170,15 +174,15 @@ const LocalDataStories = () => {
                   const nextActiveData = makeLocalActive(
                     dummyData,
                     1,
-                    pageSize,
+                    pageSize
                   );
                   store.set({active: nextActiveData});
                 }}
               />
             </div>
           );
-        }),
-      ),
+        })
+      )
     );
 };
 

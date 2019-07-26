@@ -29,7 +29,8 @@ function Default(props: Props) {
     <div
       style={{
         padding: '50px',
-      }}>
+      }}
+    >
       <Table
         active={active}
         columns={TableColumns(dummyProps)}
