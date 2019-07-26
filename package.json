@@ -1,6 +1,6 @@
 {
   "name": "@gemcook/table",
-  "version": "1.6.0",
+  "version": "1.7.1-test",
   "main": "lib/index.js",
   "repository": "https://github.com/gemcook/table.git",
   "author": "Gemcook Engineers <engineers@gemcook.com>",
