@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import {Pagination} from '@gemcook/pagination';
 import enhance from './enhancer';
 
+import 'react-table/react-table.css';
 import './styles/index.scss';
 
 type Props = {

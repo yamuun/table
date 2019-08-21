@@ -1088,10 +1088,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.3.tgz#dfa0c92efe44a1d1a7974fb49ffeb40ef2da5a27"
   integrity sha512-zVgvPwGK7c1aVdUVc9Qv7SqepOGRDrqCw7KZPSZziWGxSlbII3gmvGLPzLX4d0n0BMbamBacUrN22zOMyFFEkQ==
 
-"@gemcook/pagination@^1.18.3":
-  version "1.18.3"
-  resolved "https://registry.yarnpkg.com/@gemcook/pagination/-/pagination-1.18.3.tgz#51f06521f10244acf098dd1a58d10508004d76ce"
-  integrity sha512-/fRRYkdkpg1cZM5+5Ss4KBmvmBZHQ2/rYUBuLr0eWC7GaHrEjdau0K4Y+XbGSlency8rdA0XZ8Xh+eaOeKEfJQ==
+"@gemcook/pagination@^1.18.4":
+  version "1.18.4"
+  resolved "https://registry.yarnpkg.com/@gemcook/pagination/-/pagination-1.18.4.tgz#2c0114a56cb8d667f40ccc807f96cdc7c129211d"
+  integrity sha512-mN06iY3qrfFZRJGcqP4S/5N8NFFMPiZc/q/aP4/Kd2weJILdOGmDPCpPYasJH8K5huNxnbDHMDDkCBsdJiZrGA==
   dependencies:
     classnames "^2.2.6"
     prop-types "15.6.2"
