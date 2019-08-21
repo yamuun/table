@@ -8,13 +8,7 @@ const postcss = require('rollup-plugin-postcss');
 export default [
   {
     input: 'src/index.js',
-    external: [
-      'react',
-      'react-dom',
-      'semantic-ui-react',
-      'semantic-ui-css',
-      'indexof',
-    ],
+    external: ['react', 'react-dom', 'semantic-ui-react', 'semantic-ui-css'],
     plugins: [
       {
         name: 'clean lib dir',
@@ -41,6 +35,7 @@ export default [
       }),
       commonjs({
         include: 'node_modules/**',
+        ignore: ['indexof'],
         namedExports: {
           'node_modules/rc-select/node_modules/prop-types/index.js': [
             'string',
@@ -112,7 +107,6 @@ export default [
         react: 'React',
         'react-dom': 'ReactDOM',
         'semantic-ui-react': 'SemanticUiReact',
-        indexof: 'indexof',
       },
     },
   },
