@@ -107,6 +107,7 @@ export default [
         react: 'React',
         'react-dom': 'ReactDOM',
         'semantic-ui-react': 'SemanticUiReact',
+        indexof: 'indexof',
       },
     },
   },
