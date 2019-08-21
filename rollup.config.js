@@ -35,7 +35,6 @@ export default [
       }),
       commonjs({
         include: 'node_modules/**',
-        ignore: ['indexof'],
         namedExports: {
           'node_modules/rc-select/node_modules/prop-types/index.js': [
             'string',
@@ -107,7 +106,6 @@ export default [
         react: 'React',
         'react-dom': 'ReactDOM',
         'semantic-ui-react': 'SemanticUiReact',
-        indexof: 'indexof',
       },
     },
   },
