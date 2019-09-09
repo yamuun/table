@@ -12,7 +12,7 @@
   ],
   "dependencies": {
     "@babel/runtime-corejs3": "^7.6.0",
-    "@gemcook/pagination": "^1.20.5",
+    "@gemcook/pagination": "^1.20.7",
     "classnames": "^2.2.6",
     "immutable": "^4.0.0-rc.12",
     "indexof": "^0.0.1",
