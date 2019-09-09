@@ -98,6 +98,22 @@ const buildConfig = {
         });
       },
     },
+    {
+      name: 'create vendor - react-table',
+      buildEnd: err => {
+        if (err) {
+          throw err;
+        }
+
+        fs.copySync(
+          './node_modules/react-table/react-table.css',
+          './lib/vendor/react-table/react-table.css',
+          {
+            dereference: true,
+          }
+        );
+      },
+    },
   ],
   output: {
     dir: './lib',
@@ -118,7 +134,7 @@ const tsdConfig = {
     'react-table',
     'classnames',
     '@gemcook/pagination',
-    'rc-pagination/dist/rc-pagination.min.css',
+    '@gemcook/pagination/lib/vendor/rc-pagination/rc-pagination.min.css',
     'react-table/react-table.css',
   ],
   input,

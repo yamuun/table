@@ -1068,10 +1068,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.3.tgz#dfa0c92efe44a1d1a7974fb49ffeb40ef2da5a27"
   integrity sha512-zVgvPwGK7c1aVdUVc9Qv7SqepOGRDrqCw7KZPSZziWGxSlbII3gmvGLPzLX4d0n0BMbamBacUrN22zOMyFFEkQ==
 
-"@gemcook/pagination@^1.20.7":
-  version "1.20.7"
-  resolved "https://registry.yarnpkg.com/@gemcook/pagination/-/pagination-1.20.7.tgz#8b559e45fd1a8680d5affaa969c3b67acabfdfa0"
-  integrity sha512-1P6p0JlO2RsbVITsCc7+rkQDMCZskwyEMuA54EKRHYVHURSTXddbJu+CgU93rinzCSvpb65RlCGg/nAOhCqmqg==
+"@gemcook/pagination@^1.20.8":
+  version "1.20.8"
+  resolved "https://registry.yarnpkg.com/@gemcook/pagination/-/pagination-1.20.8.tgz#5d2815d3d80665d35d9cdfe003a09b1b3f7668b9"
+  integrity sha512-EbYNb9phYeBeLH3Z4MUB7d+7QSalBbvf/mniMp9JToaugDAtwzI61bhk9AZiDPjvgjy9FrBN8SRIj2xhmxcuAw==
   dependencies:
     "@babel/runtime-corejs3" "^7.6.0"
     classnames "^2.2.6"
