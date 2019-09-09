@@ -1,0 +1,122 @@
+@import './_value';
+
+// Semantic UI React
+.ui.checkbox .box::before,
+.ui.checkbox label::before {
+  top: 3px;
+}
+
+// React Table
+.ReactTable {
+  background: {
+    color: $table__bg-color;
+  }
+
+  border: none !important;
+  border-radius: 4px;
+
+  div {
+    outline: none;
+  }
+
+  .rt-noData {
+    z-index: 0;
+  }
+
+  .rt-thead {
+    .rt-th {
+      text-align: left;
+      box-shadow: none;
+
+      .sort-asc {
+        width: 0;
+        height: 0;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid black;
+        border-left: 5px solid transparent;
+      }
+
+      div,
+      span {
+        display: flex;
+        align-items: flex-start;
+        font-size: 14px !important;
+        line-height: normal !important;
+      }
+    }
+
+    &.-header {
+      height: 70px;
+      box-shadow: none !important;
+    }
+  }
+
+  .rt-tr {
+    height: 70px;
+    border-bottom: 3px solid $table__thead-border-color;
+
+    .rt-th {
+      padding-top: 25px !important;
+      padding-left: 25px !important;
+      font-weight: bold;
+      color: $table__th-text-color;
+      border: none !important;
+    }
+  }
+
+  .rt-tbody {
+    overflow: hidden;
+
+    .rt-tr-group:last-child {
+      .rt-tr {
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+    }
+
+    .rt-tr-group {
+      height: 40px;
+
+      .rt-tr {
+        height: 40px;
+        border: none;
+
+        &.-odd {
+          .rt-td {
+            display: flex;
+            align-items: center;
+            padding-left: 25px;
+            color: $table__td-text-color;
+            border-right: none;
+
+            a {
+              color: $table__link-color;
+            }
+          }
+
+          &:hover {
+            background-color: rgba($table__main-color, 0.07) !important;
+          }
+        }
+
+        &.-even {
+          .rt-td {
+            display: flex;
+            align-items: center;
+            padding-left: 25px;
+            color: $table__td-text-color;
+            border-right: none;
+
+            a {
+              color: $table__link-color;
+            }
+          }
+
+          &:hover {
+            background-color: rgba($table__main-color, 0.07) !important;
+          }
+        }
+      }
+    }
+  }
+}
