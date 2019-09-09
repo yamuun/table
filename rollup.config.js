@@ -113,7 +113,14 @@ const buildConfig = {
 
 // Rollup config for type definitions
 const tsdConfig = {
-  external: [...external, 'react-table', 'classnames', '@gemcook/pagination'],
+  external: [
+    ...external,
+    'react-table',
+    'classnames',
+    '@gemcook/pagination',
+    'rc-pagination/dist/rc-pagination.min.css',
+    'react-table/react-table.css',
+  ],
   input,
   plugins: [
     postcss({
