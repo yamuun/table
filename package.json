@@ -1,6 +1,6 @@
 {
   "name": "@gemcook/table",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "author": "Gemcook Engineers <engineers@gemcook.com>",
   "license": "MIT",
   "main": "./lib/index.js",
