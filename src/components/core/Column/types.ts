@@ -1,3 +1,5 @@
+import {Column} from 'react-table';
+
 export type ColumnProps = {
   style: {[key: string]: any};
   className: string;
@@ -12,5 +14,5 @@ export type ColumnProps = {
     order: string;
   };
   updateSortState: (sortState: {key: any; order: any}) => void;
-  columns: any[];
+  columns: Column<any>[];
 };

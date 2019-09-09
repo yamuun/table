@@ -1,11 +1,8 @@
+import {Column} from 'react-table';
+
 export type TableProps = {
   active: any[];
-  columns: {
-    Header: string;
-    accessor: string;
-    resizable: boolean;
-    sortable: boolean;
-  }[];
+  columns: Column<any>[];
   loading: boolean;
   sortState?: {[key: string]: any};
   updateSortState?: (sortState: any) => void;
